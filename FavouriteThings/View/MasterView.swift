@@ -27,6 +27,8 @@ struct MasterView: View {
                 }
             }.onDelete { indices in
                 indices.forEach { self.viewModel.removeFormulaOneDriver(index: $0) }
+            }.onMove { (indices, destination) in
+                self.viewModel.formulaOneDrivers.move(fromOffsets: indices, toOffset: destination)
             }
         }
     }
