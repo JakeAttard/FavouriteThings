@@ -21,7 +21,6 @@ struct ContentView: View {
             
             /// Bringing in MasterView contents
             MasterView(viewModel: viewModel)
-                .navigationBarTitle(Text(ViewModel.listTitle), displayMode: .inline)
                 .navigationBarItems(
                     leading: EditButton(),
                     trailing: Button(

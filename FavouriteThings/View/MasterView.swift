@@ -16,20 +16,32 @@ import SwiftUI
 struct MasterView: View {
     
     @ObservedObject var viewModel: ViewModel
+//    @Binding var title: String
+    @Environment(\.editMode) var mode
     
     var body: some View {
-        List {
-            ForEach(viewModel.formulaOneDrivers) { formulaOneDriver in
-                NavigationLink(destination: DetailView(model: formulaOneDriver, viewModel: self.viewModel)) {
-                    Section {
-                        RowView(model: formulaOneDriver)
-                    }
+        
+        VStack {
+            if mode?.wrappedValue == .active {
+                HStack {
+                    Text("📝")
+                    TextField("Enter Title", text: $viewModel.listTitle).font(Font.system(.largeTitle).bold())
                 }
-            }.onDelete { indices in
-                indices.forEach { self.viewModel.removeFormulaOneDriver(index: $0) }
-            }.onMove { (indices, destination) in
-                self.viewModel.formulaOneDrivers.move(fromOffsets: indices, toOffset: destination)
             }
-        }
+            
+            List {
+                ForEach(viewModel.formulaOneDrivers) { formulaOneDriver in
+                    NavigationLink(destination: DetailView(model: formulaOneDriver, viewModel: self.viewModel)) {
+                        Section {
+                            RowView(model: formulaOneDriver)
+                        }
+                    }
+                }.onDelete { indices in
+                    indices.forEach { self.viewModel.removeFormulaOneDriver(index: $0) }
+                }.onMove { (indices, destination) in
+                    self.viewModel.formulaOneDrivers.move(fromOffsets: indices, toOffset: destination)
+                }
+            }
+        }.navigationBarTitle(mode?.wrappedValue == .active ? "": viewModel.listTitle)
     }
 }

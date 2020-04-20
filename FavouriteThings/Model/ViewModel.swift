@@ -16,7 +16,7 @@ class ViewModel: ObservableObject, Identifiable {
     
     /// Static Text and Placeholder information
     
-    static var listTitle: String = "Formula One Drivers"
+    @Published var listTitle: String
     
     static var driveName: String = "Name:"
     
@@ -89,7 +89,8 @@ class ViewModel: ObservableObject, Identifiable {
        - formulaOneDrivers: FormulaOneDriver Array
     */
     
-    init(formulaOneDrivers: [FormulaOneDriver]) {
+    init(formulaOneDrivers: [FormulaOneDriver], listTitle: String) {
         self.formulaOneDrivers = formulaOneDrivers
+        self.listTitle = listTitle
     }
 }

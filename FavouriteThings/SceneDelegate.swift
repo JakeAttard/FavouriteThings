@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
+    
         let contentView = ContentView(viewModel: ViewModel(formulaOneDrivers: [
                 
         // Formula One Drivers
@@ -83,7 +84,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
         // Nicholas Latifi
         FormulaOneDriver(formulaOneDriverImage: "nicholasL", formulaOneDriverName: "Nicholas Latifi", formulaOneDriverNationality: "Canada", formulaOneDriverTeam: "Williams", formulaOneDriverChampionships: 0, formulaOneDriverRaceStarts: 0, formulaOneDriverRaceWins: 0, formulaOneDriverPodiums: 0, formulaOneDriverPolePositions: 0, formulaOneDriverFastestLaps: 0, formulaOneDriverLapsCompleted: 0, formulaOneDriverCareerPoints: 0)
-            ]))
+        ], listTitle: "Formula One Drivers"))
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
