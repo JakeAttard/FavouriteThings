@@ -12,11 +12,12 @@
 
 import Foundation
 
-class ViewModel: ObservableObject, Identifiable {
+class ViewModel: ObservableObject, Identifiable, Codable {
     
     /// Static Text and Placeholder information
+    @Published var formulaOneDrivers: [FormulaOneDriver]
     
-    @Published var listTitle: String
+    @Published var listTitle: String = "Formula One Drivers"
     
     static var driveName: String = "Name:"
     
@@ -72,11 +73,9 @@ class ViewModel: ObservableObject, Identifiable {
     
     static var disclaimer: String = "Disclaimer: Images taken from formula1.com website."
     
-    @Published var formulaOneDrivers: [FormulaOneDriver]
-    
     /// Adding in a new Formula One Driver
     func addFormulaOneDriver() {
-        formulaOneDrivers.insert(FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverNationality: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverRaceStarts: 0, formulaOneDriverRaceWins: 0, formulaOneDriverPodiums: 0, formulaOneDriverPolePositions: 0, formulaOneDriverFastestLaps: 0, formulaOneDriverLapsCompleted: 0, formulaOneDriverCareerPoints: 0), at: 0)
+        formulaOneDrivers.insert(FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverNationality: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverRaceStarts: 0, formulaOneDriverRaceWins: 0, formulaOneDriverPodiums: 0, formulaOneDriverPolePositions: 0, formulaOneDriverFastestLaps: 0, formulaOneDriverLapsCompleted: 0, formulaOneDriverCareerPoints: 0, formulaOneDriverNote: ""), at: 0)
     }
     
     /// Removing a Formula One Driver
@@ -84,13 +83,29 @@ class ViewModel: ObservableObject, Identifiable {
         formulaOneDrivers.remove(at: index)
     }
     
+    enum CodingKeys: String, CodingKey {
+        case formulaOneDrivers
+        case listTitle
+    }
+    
     /**
     - Parameters:
        - formulaOneDrivers: FormulaOneDriver Array
     */
     
-    init(formulaOneDrivers: [FormulaOneDriver], listTitle: String) {
-        self.formulaOneDrivers = formulaOneDrivers
-        self.listTitle = listTitle
+    init() {
+        formulaOneDrivers = [FormulaOneDriver]()
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        formulaOneDrivers = try container.decode([FormulaOneDriver].self, forKey: .formulaOneDrivers)
+        listTitle = try container.decode(String.self, forKey: .listTitle)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(formulaOneDrivers, forKey: .formulaOneDrivers)
+        try container.encode(listTitle, forKey: .listTitle)
     }
 }
