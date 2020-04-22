@@ -86,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0150988244FB22100C49884 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B0C3F0312449E89B0023B4E2 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B0C3EFF12449E4230023B4E2 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +117,7 @@
 		B0C3EFFC2449E4230023B4E2 /* FavouriteThings */ = {
 			isa = PBXGroup;
 			children = (
+				B0150988244FB22100C49884 /* ViewModel */,
 				B0C3F02E2449E7410023B4E2 /* View */,
 				B0C3F02D2449E73A0023B4E2 /* Model */,
 				B0C3EFFD2449E4230023B4E2 /* AppDelegate.swift */,
@@ -151,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				B0C3F02F2449E7680023B4E2 /* FormulaOneDriver.swift */,
-				B0C3F0312449E89B0023B4E2 /* ViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

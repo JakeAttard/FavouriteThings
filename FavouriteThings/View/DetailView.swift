@@ -41,20 +41,11 @@ struct DetailView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         
-                        /// Bringing in the Driver Name text from the ViewModel
-                        Text(ViewModel.driveName)
-                            .fontWeight(.bold)
-                            .frame(maxHeight: .infinity)
+                        /// TextField for driverName Label
+                        TextField(ViewModel.driverNamePlaceholder, text:  self.$viewModel.driverName)
                         
-                        /// Bringing in the Driver  Image text from the ViewModel
-                        Text(ViewModel.image)
-                            .fontWeight(.bold)
-                            .frame(maxHeight: .infinity)
-                        
-                        /// Bringing in the Driver Country text from the ViewModel
-                        Text(ViewModel.country)
-                            .fontWeight(.bold)
-                            .frame(maxHeight: .infinity)
+                        /// TextField for driverImage Label
+                        TextField(ViewModel.driverImageLabelPlaceholder, text:  self.$viewModel.driverImage)
                         
                         /// Bringing in the Current Team text from the ViewModel
                         Text(ViewModel.currentTeam)
@@ -63,21 +54,6 @@ struct DetailView: View {
                         
                         /// Bringing in the Titles text from the ViewModel
                         Text(ViewModel.titles)
-                            .fontWeight(.bold)
-                            .frame(maxHeight: .infinity)
-                        
-                        /// Bringing in the Race Wins text from the ViewModel
-                        Text(ViewModel.raceWins)
-                            .fontWeight(.bold)
-                            .frame(maxHeight: .infinity)
-                        
-                        /// Bringing in the Driver Podiums text from the ViewModel
-                        Text(ViewModel.podiums)
-                            .fontWeight(.bold)
-                            .frame(maxHeight: .infinity)
-                        
-                        /// Bringing in the Pole Positions text from the ViewModel
-                        Text(ViewModel.polePositions)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                     }
@@ -95,11 +71,6 @@ struct DetailView: View {
                             self.model.updateFormulaOneDriverImage(imageURL: self.url)
                         }
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            
-                        
-                        /// TextField for formulaOneDriverNationality
-                        TextField(ViewModel.countryPlaceholder, text: self.$model.formulaOneDriverNationality)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverTeam
                         TextField(ViewModel.currentTeamPlaceholder, text: self.$model.formulaOneDriverTeam)
@@ -108,43 +79,11 @@ struct DetailView: View {
                         /// TextField for formulaOneDriverChampionships
                         TextField(ViewModel.titlesPlaceholder, value: self.$model.formulaOneDriverChampionships, formatter: NumberFormatter())
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        /// TextField for formulaOneDriverRaceWins
-                        TextField(ViewModel.raceWinsPlaceholder, value: self.$model.formulaOneDriverRaceWins, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        /// TextField for formulaOneDriverPodiums
-                        TextField(ViewModel.podiumsPlaceholder, value: self.$model.formulaOneDriverPodiums, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        /// TextField for formulaOneDriverPolePositions
-                        TextField(ViewModel.polePositionsPlaceholder, value: self.$model.formulaOneDriverPolePositions, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
                     }.padding(.leading)
                 }
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
-                        
-                        /// Bringing in the Race Starts text from the ViewModel
-                        Text(ViewModel.raceStarts)
-                        .fontWeight(.bold)
-                         .frame(maxHeight: .infinity)
-                        
-                        /// Bringing in the Fastest Laps text from the ViewModel
-                        Text(ViewModel.fastestLaps)
-                        .fontWeight(.bold)
-                         .frame(maxHeight: .infinity)
-                        
-                        /// Bringing in the Laps Completed text from the ViewModel
-                        Text(ViewModel.lapsCompleted)
-                        .fontWeight(.bold)
-                         .frame(maxHeight: .infinity)
-                        
-                        /// Bringing in the Career Points text from the ViewModel
-                        Text(ViewModel.careerPoints)
-                        .fontWeight(.bold)
-                         .frame(maxHeight: .infinity)
                         
                         /// Bringing in the Notes text from the ViewModel
                         Text(ViewModel.notes)
@@ -155,22 +94,6 @@ struct DetailView: View {
                     /// TextField Labels positioned on the right
                     VStack {
                         
-                        /// TextField for formulaOneDriverRaceStarts
-                        TextField(ViewModel.raceStartsPlaceholder, value: self.$model.formulaOneDriverRaceStarts, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        /// TextField for formulaOneDriverFastestLaps
-                        TextField(ViewModel.fastestLapsPlaceholder, value: self.$model.formulaOneDriverFastestLaps, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        /// TextField for formulaOneDriverLapsCompleted
-                        TextField(ViewModel.lapsCompletedPlaceholder, value: self.$model.formulaOneDriverLapsCompleted, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        /// TextField for formulaOneDriverCareerPoints
-                        TextField(ViewModel.careerPointsPlaceholder, value: self.$model.formulaOneDriverCareerPoints, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
                         TextField(ViewModel.addNotes, text: self.$model.formulaOneDriverNote)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                     }.padding(.leading)
@@ -179,15 +102,6 @@ struct DetailView: View {
 
             }.padding(.horizontal)
                 .fixedSize(horizontal: false, vertical: true)
-            
-                
-            HStack {
-                /// Bringing in the Disclaimer text from the ViewModel
-                Text(ViewModel.disclaimer)
-                .fontWeight(.light)
-                .font(.system(size: 12))
-                .multilineTextAlignment(.center)
-            }
         }
     }
 }

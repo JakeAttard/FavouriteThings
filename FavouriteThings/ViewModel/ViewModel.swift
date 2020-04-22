@@ -19,17 +19,15 @@ class ViewModel: ObservableObject, Identifiable, Codable {
     
     @Published var listTitle: String = "Formula One Drivers"
     
-    static var driveName: String = "Name:"
+    @Published var driverName: String = "Driver Name"
     
-    static var driverNamePlaceholder: String = "Driver Name"
+    static var driverNamePlaceholder:  String = "Driver Name"
     
-    static var image: String = "Image URL:"
+    @Published var driverImage: String = "Driver Image"
+    
+    static var driverImageLabelPlaceholder: String = "Image URL"
     
     static var imageUrlPlaceholder: String = "Formula One Driver Profile URL"
-    
-    static var country: String = "Country:"
-    
-    static var countryPlaceholder: String = "Add Country"
     
     static var currentTeam: String = "Current Team:"
     
@@ -39,43 +37,14 @@ class ViewModel: ObservableObject, Identifiable, Codable {
     
     static var titlesPlaceholder: String = "Number of Titles Won"
     
-    static var raceWins: String = "Race Wins:"
-    
-    static var raceWinsPlaceholder: String = "Number of Races Won"
-    
-    static var podiums: String = "Podiums:"
-    
-    static var podiumsPlaceholder: String = "Number of Podiums"
-    
-    static var polePositions: String = "Pole Positions:"
-    
-    static var polePositionsPlaceholder: String = "Number of Poles"
-    
-    static var raceStarts: String = "Race Starts:"
-    
-    static var raceStartsPlaceholder: String = "Number of Race Starts"
-    
-    static var fastestLaps: String = "Fastest Laps:"
-    
-    static var fastestLapsPlaceholder: String = "Number of Fastest Laps"
-    
-    static var lapsCompleted: String = "Laps Finished:"
-    
-    static var lapsCompletedPlaceholder: String = "Number of Laps Completed"
-    
-    static var careerPoints: String = "Career Points:"
-    
-    static var careerPointsPlaceholder: String = "Number of Career Points"
     
     static var notes: String = "Notes:"
     
     static var addNotes: String = "Add note..."
     
-    static var disclaimer: String = "Disclaimer: Images taken from formula1.com website."
-    
     /// Adding in a new Formula One Driver
     func addFormulaOneDriver() {
-        formulaOneDrivers.insert(FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverNationality: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverRaceStarts: 0, formulaOneDriverRaceWins: 0, formulaOneDriverPodiums: 0, formulaOneDriverPolePositions: 0, formulaOneDriverFastestLaps: 0, formulaOneDriverLapsCompleted: 0, formulaOneDriverCareerPoints: 0, formulaOneDriverNote: ""), at: 0)
+        formulaOneDrivers.insert(FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverNote: ""), at: 0)
     }
     
     /// Removing a Formula One Driver
@@ -86,6 +55,8 @@ class ViewModel: ObservableObject, Identifiable, Codable {
     enum CodingKeys: String, CodingKey {
         case formulaOneDrivers
         case listTitle
+        case driverName
+        case driverImage
     }
     
     /**
@@ -101,11 +72,15 @@ class ViewModel: ObservableObject, Identifiable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         formulaOneDrivers = try container.decode([FormulaOneDriver].self, forKey: .formulaOneDrivers)
         listTitle = try container.decode(String.self, forKey: .listTitle)
+        driverName = try container.decode(String.self, forKey: .driverName)
+        driverImage = try container.decode(String.self, forKey: .driverImage)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(formulaOneDrivers, forKey: .formulaOneDrivers)
         try container.encode(listTitle, forKey: .listTitle)
+        try container.encode(driverName, forKey: .driverName)
+        try container.encode(driverImage, forKey: .driverImage)
     }
 }
