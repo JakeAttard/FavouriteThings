@@ -19,26 +19,27 @@ class ViewModel: ObservableObject, Identifiable, Codable {
     
     @Published var listTitle: String = "Formula One Drivers"
     
-    @Published var driverName: String = "Driver Name"
+    @Published var driverName: String = "Driver Name:"
     
-    static var driverNamePlaceholder:  String = "Driver Name"
+    static var driverNamePlaceholder:  String = "Driver Name:"
     
-    @Published var driverImage: String = "Driver Image"
+    @Published var driverImage: String = "Driver Image:"
     
     static var driverImageLabelPlaceholder: String = "Image URL"
     
     static var imageUrlPlaceholder: String = "Formula One Driver Profile URL"
     
-    static var currentTeam: String = "Current Team:"
+    @Published var driverTeam: String = "Driver Team:"
     
-    static var currentTeamPlaceholder: String = "Add Current Team:"
+    static var currentTeamPlaceholder: String = "Current Team:"
     
-    static var titles: String = "Titles:"
+    @Published var driverTitles: String = "Titles:"
     
-    static var titlesPlaceholder: String = "Number of Titles Won"
+    static var titlesPlaceholder: String = "Titles:"
     
+    @Published var driverNotes: String = "Notes:"
     
-    static var notes: String = "Notes:"
+    static var notesPlaceholder: String = "Notes:"
     
     static var addNotes: String = "Add note..."
     
@@ -57,6 +58,9 @@ class ViewModel: ObservableObject, Identifiable, Codable {
         case listTitle
         case driverName
         case driverImage
+        case driverTeam
+        case driverTitles
+        case driverNotes
     }
     
     /**
@@ -74,6 +78,9 @@ class ViewModel: ObservableObject, Identifiable, Codable {
         listTitle = try container.decode(String.self, forKey: .listTitle)
         driverName = try container.decode(String.self, forKey: .driverName)
         driverImage = try container.decode(String.self, forKey: .driverImage)
+        driverTeam = try container.decode(String.self, forKey: .driverTeam)
+        driverTitles = try container.decode(String.self, forKey: .driverTitles)
+        driverNotes = try container.decode(String.self, forKey: .driverNotes)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -82,5 +89,8 @@ class ViewModel: ObservableObject, Identifiable, Codable {
         try container.encode(listTitle, forKey: .listTitle)
         try container.encode(driverName, forKey: .driverName)
         try container.encode(driverImage, forKey: .driverImage)
+        try container.encode(driverTeam, forKey: .driverTeam)
+        try container.encode(driverTitles, forKey: .driverTitles)
+        try container.encode(driverNotes, forKey: .driverNotes)
     }
 }

@@ -16,7 +16,7 @@ import SwiftUI
 class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     
     /// Formula One Driver Image
-    var formulaOneDriverImage: String
+    @Published var formulaOneDriverImage: String
     
     /// Formula One Driver Name
     @Published var formulaOneDriverName: String

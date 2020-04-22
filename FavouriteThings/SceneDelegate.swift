@@ -25,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Sebastian Vettel
     var driver3 = FormulaOneDriver(formulaOneDriverImage: "sebastianV", formulaOneDriverName: "Sebastian Vettel", formulaOneDriverTeam: "Ferrari", formulaOneDriverChampionships: 4, formulaOneDriverNote: "")
     
-    
     private let fileName = "drivers.json"
     private let fileManager = FileManager.default
     lazy private var documentsDir: URL = {
