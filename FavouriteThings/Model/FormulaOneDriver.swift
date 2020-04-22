@@ -15,6 +15,8 @@ import SwiftUI
 
 class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     
+    var imageURL = ""
+    
     /// Formula One Driver Image
     @Published var formulaOneDriverImage: String
     
@@ -34,6 +36,7 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     @Published var formulaOneDriverUIImage: UIImage?
     
     enum CodingKeys: String, CodingKey {
+        case imageURL
         case formulaOneDriverImage
         case formulaOneDriverName
         case formulaOneDriverTeam
@@ -60,15 +63,19 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        imageURL = try container.decode(String.self, forKey: .imageURL)
         formulaOneDriverImage = try container.decode(String.self, forKey: .formulaOneDriverImage)
         formulaOneDriverName = try container.decode(String.self, forKey: .formulaOneDriverName)
         formulaOneDriverTeam = try container.decode(String.self, forKey: .formulaOneDriverTeam)
         formulaOneDriverChampionships = try container.decode(Int.self, forKey: .formulaOneDriverChampionships)
         formulaOneDriverNote = try container.decode(String.self, forKey: .formulaOneDriverNote)
+        updateFormulaOneDriverImage(imageURL: imageURL)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(imageURL, forKey: .imageURL)
+        try container.encode(formulaOneDriverImage, forKey: .formulaOneDriverImage)
         try container.encode(formulaOneDriverImage, forKey: .formulaOneDriverImage)
         try container.encode(formulaOneDriverName, forKey: .formulaOneDriverName)
         try container.encode(formulaOneDriverTeam, forKey: .formulaOneDriverTeam)

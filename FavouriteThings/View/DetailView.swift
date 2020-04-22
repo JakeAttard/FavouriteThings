@@ -33,15 +33,17 @@ struct DetailView: View {
                     .clipShape(Circle())
                     .shadow(radius: 10)
                     .scaledToFit()
-                    .padding(.bottom, 50.0)
+                    .padding(.bottom, 20.0)
+                
+                /// TextField for formulaOneDriverName
+                TextField(ViewModel.driverNamePlaceholder, text:  self.$model.formulaOneDriverName)
+                    .multilineTextAlignment(TextAlignment.center)
+                    .font(Font.system(size: 40, weight: .bold, design: .serif))
+                    .padding(.bottom, 20.0)
                 
                 HStack {
                     
                     VStack() {
-                        
-                        /// TextField for driverName Label
-                        TextField(ViewModel.driverNamePlaceholder, text:  self.$viewModel.driverName)
-                        .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
                         /// TextField for driverImage Label
                         TextField(ViewModel.driverImageLabelPlaceholder, text:  self.$viewModel.driverImage)
@@ -65,13 +67,11 @@ struct DetailView: View {
                         
                         /// Bringing in the TextField Placeholder for all the TextFields from the ViewModel
                         
-                        /// TextField for formulaOneDriverName
-                        TextField(ViewModel.driverNamePlaceholder, text:  self.$model.formulaOneDriverName)
-                            .font(Font.system(size: 16, weight: .bold, design: .serif))
+                        
                         
                         /// TextField to updateFormulaOneDriverImage
-                        TextField("Image URL", text: self.$model.formulaOneDriverImage) {
-                            self.model.updateFormulaOneDriverImage(imageURL: self.model.formulaOneDriverImage)
+                        TextField("Image URL", text: self.$model.imageURL) {
+                            self.model.updateFormulaOneDriverImage(imageURL: self.model.imageURL)
                         }
                             .font(Font.system(size: 16, weight: .bold, design: .serif))
                         
