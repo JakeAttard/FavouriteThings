@@ -99,7 +99,7 @@ class FavouriteThingsTests: XCTestCase {
     func testViewModel() {
         
         /// Adding a new FormulaOneDriver
-        viewModel?.addFormulaOneDriver()
+        viewModel?.addFormulaOneDriver(formulaOneDriver: formulaOneDriver!)
         
         /// Checking to see if the count is 2 as one has just been added
         XCTAssertEqual(viewModel?.formulaOneDrivers.count, 1)
@@ -122,8 +122,7 @@ class FavouriteThingsTests: XCTestCase {
             return
         }
         
-        viewModel.addFormulaOneDriver()
-        
+        viewModel.addFormulaOneDriver(formulaOneDriver: formulaOneDriver!)
         do {
             let json = JSONEncoder()
             

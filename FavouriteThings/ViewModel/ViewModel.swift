@@ -44,8 +44,8 @@ class ViewModel: ObservableObject, Identifiable, Codable {
     static var addNotes: String = "Add note..."
     
     /// Adding in a new Formula One Driver
-    func addFormulaOneDriver() {
-        formulaOneDrivers.insert(FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverNote: ""), at: 0)
+    func addFormulaOneDriver(formulaOneDriver: FormulaOneDriver) {
+        formulaOneDrivers.insert(formulaOneDriver, at: 0)
     }
     
     /// Removing a Formula One Driver

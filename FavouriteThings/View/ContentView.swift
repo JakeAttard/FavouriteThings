@@ -25,7 +25,7 @@ struct ContentView: View {
                     leading: EditButton(),
                     trailing: Button(
                         action: {
-                            withAnimation { self.viewModel.addFormulaOneDriver() }
+                            withAnimation { self.viewModel.addFormulaOneDriver(formulaOneDriver: FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverNote: "")) }
                         }
                         
                     ) {
