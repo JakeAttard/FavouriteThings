@@ -15,6 +15,7 @@ import SwiftUI
 
 class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     
+    /// Empty imageURL String
     var imageURL = ""
     
     /// Formula One Driver Image
@@ -35,6 +36,7 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     /// Formula One Driver Image
     @Published var formulaOneDriverUIImage: UIImage?
     
+     /// Need CodingKeys to Enocde and Decode the JSON Data
     enum CodingKeys: String, CodingKey {
         case imageURL
         case formulaOneDriverImage
@@ -61,6 +63,11 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
         self.formulaOneDriverNote = formulaOneDriverNote
     }
     
+    /**
+    Decoding the data from the CodingKeys
+    - Parameter from: Decoder object used to decode the data
+    */
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         imageURL = try container.decode(String.self, forKey: .imageURL)
@@ -71,6 +78,11 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
         formulaOneDriverNote = try container.decode(String.self, forKey: .formulaOneDriverNote)
         updateFormulaOneDriverImage(imageURL: imageURL)
     }
+    
+    /**
+    Encoding the data from the CodingKeys
+    - Parameter to: Encoding object used to encode the data
+    */
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

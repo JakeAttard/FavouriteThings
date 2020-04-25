@@ -15,6 +15,7 @@ import Foundation
 class ViewModel: ObservableObject, Identifiable, Codable {
     
     /// Static Text and Placeholder information
+    
     @Published var formulaOneDrivers: [FormulaOneDriver]
     
     @Published var listTitle: String = "Formula One Drivers"
@@ -53,6 +54,8 @@ class ViewModel: ObservableObject, Identifiable, Codable {
         formulaOneDrivers.remove(at: index)
     }
     
+    
+    /// Need CodingKeys to Enocde and Decode the JSON Data
     enum CodingKeys: String, CodingKey {
         case formulaOneDrivers
         case listTitle
@@ -72,6 +75,11 @@ class ViewModel: ObservableObject, Identifiable, Codable {
         formulaOneDrivers = [FormulaOneDriver]()
     }
     
+    /**
+     Decoding the data from the CodingKeys
+     - Parameter from: Decoder object used to decode the data
+     */
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         formulaOneDrivers = try container.decode([FormulaOneDriver].self, forKey: .formulaOneDrivers)
@@ -82,6 +90,11 @@ class ViewModel: ObservableObject, Identifiable, Codable {
         driverTitles = try container.decode(String.self, forKey: .driverTitles)
         driverNotes = try container.decode(String.self, forKey: .driverNotes)
     }
+    
+    /**
+    Encoding the data from the CodingKeys
+    - Parameter to: Encoding object used to encode the data
+    */
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
