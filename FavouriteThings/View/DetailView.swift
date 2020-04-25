@@ -46,19 +46,19 @@ struct DetailView: View {
                     VStack() {
                         
                         /// TextField for driverImage Label
-                        TextField(ViewModel.driverImageLabelPlaceholder, text:  self.$viewModel.driverImage)
+                        TextField(model.formulaOneDriverImageTitle, text:  self.$model.formulaOneDriverImageTitle)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
-                        /// TextField for driver current team Label
-                        TextField(ViewModel.currentTeamPlaceholder, text:  self.$viewModel.driverTeam)
+                        /// TextField for driverImage Label
+                        TextField(model.formulaOneDriverTeamTitle, text:  self.$model.formulaOneDriverTeamTitle)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
-                        /// TextField for driver titles Label
-                        TextField(ViewModel.titlesPlaceholder, text:  self.$viewModel.driverTitles)
+                        /// TextField for driverImage Label
+                        TextField(model.formulaOneDriverChampionshipsTitle, text:  self.$model.formulaOneDriverChampionshipsTitle)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
-                        /// TextField for driver notes Label
-                        TextField(ViewModel.notesPlaceholder, text:  self.$viewModel.driverNotes)
+                        /// TextField for driverImage Label
+                        TextField(model.formulaOneDriverNotesTitle, text:  self.$model.formulaOneDriverNotesTitle)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
                     }.padding(.leading)

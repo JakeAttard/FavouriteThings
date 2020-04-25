@@ -114,43 +114,18 @@ class FavouriteThingsTests: XCTestCase {
         XCTAssert((formulaOneDriver?.getFormulaOneDriverImage() as Any) is Image)
     }
     
-    /// Testing the DriverImage TextLabel
-    func testDriverImageTextLabel() {
-        let driverImageText = "Driver Image:"
-        XCTAssert(viewModel?.driverImage == driverImageText)
-        XCTAssertEqual(viewModel?.driverImage, driverImageText)
-    }
-    
-    /// Testing the DriverTeam TextLabel
-    func testDriverTeamTextLabel() {
-        let driverTeamText = "Driver Team:"
-        XCTAssert(viewModel?.driverTeam == driverTeamText)
-        XCTAssertEqual(viewModel?.driverTeam, driverTeamText)
-    }
-    
-    /// Testing the driverTitles TextLabel
-    func testDriverTitlesTextLabel() {
-        let driverTitlesText = "Driver Titles:"
-        XCTAssert(viewModel?.driverTitles == driverTitlesText)
-        XCTAssertEqual(viewModel?.driverTitles, driverTitlesText)
-    }
-    
-    /// Testing the driverNotes TextLabel
-    func testDriverNotesTextLabel() {
-        let driverNotesText = "Driver Notes:"
-        XCTAssert(viewModel?.driverNotes == driverNotesText)
-        XCTAssertEqual(viewModel?.driverNotes, driverNotesText)
-    }
-    
     /// Testing the JSON File (Encoding and Decoding)
     
     func testJSONFile() {
-        guard var viewModel = viewModel else {
+        
+        let driver1 = FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverNote: "")
+        
+        guard let viewModel = viewModel else {
             XCTFail("ViewModel is nil")
             return
         }
         
-        viewModel.addFormulaOneDriver(formulaOneDriver: formulaOneDriver!)
+        viewModel.addFormulaOneDriver(formulaOneDriver: driver1)
         
         /// Encoding successful and saving in the ViewModel. Error message added in the catch if fails
         do {
@@ -163,22 +138,55 @@ class FavouriteThingsTests: XCTestCase {
             XCTFail("JSON Encode failed.")
         }
         
+        var model = ViewModel()
+        
         /// Decoding successful.  Error message added in the catch if fails
         do {
-            if let data = try? Data(contentsOf: fileURL) {
-                let decoder = JSONDecoder()
+            
+            let data = try Data(contentsOf: fileURL)
+            
+            let decoder = JSONDecoder()
+            
+            let decodedViewModel = try decoder.decode(ViewModel.self, from: data)
                 
-                let decodedViewModel = try decoder.decode(ViewModel.self, from: data)
-                
-                viewModel = decodedViewModel
-            }
+            model = decodedViewModel
+            
         } catch {
             XCTFail("JSON Decode failed.")
         }
         
         /// Testing that it was saved correctly in the ViewModel
-        XCTAssertEqual(viewModel.formulaOneDrivers.count, 1)
+        XCTAssertEqual(model.formulaOneDrivers.count, 1)
         
+        /// Testing and comparing that the listTitle is the same for the decoded model
+        XCTAssertEqual(viewModel.listTitle, model.listTitle)
+        
+        /// Testing and comparing that the formulaOneDriverName is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverName, model.formulaOneDrivers[0].formulaOneDriverName)
+        
+        /// Testing and comparing that the formulaOneDriverImage is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverImage, model.formulaOneDrivers[0].formulaOneDriverImage)
+        
+        /// Testing and comparing that the formulaOneDriverTeam is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverTeam, model.formulaOneDrivers[0].formulaOneDriverTeam)
+        
+        /// Testing and comparing that the formulaOneDriverChampions is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverChampionships, model.formulaOneDrivers[0].formulaOneDriverChampionships)
+        
+        /// Testing and comparing that the formulaOneDriverNote is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverNote, model.formulaOneDrivers[0].formulaOneDriverNote)
+        
+        /// Testing and comparing that the formulaOneImageTitle is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverImageTitle, model.formulaOneDrivers[0].formulaOneDriverImageTitle)
+        
+        /// Testing and comparing that the formulaOneTeamTitle is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverTeamTitle, model.formulaOneDrivers[0].formulaOneDriverTeamTitle)
+        
+         /// Testing and comparing that the formulaOneChampionshipsTitle is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverChampionshipsTitle, model.formulaOneDrivers[0].formulaOneDriverChampionshipsTitle)
+        
+         /// Testing and comparing that the formulaOneNotesTitle is the same for the decoded model
+        XCTAssertEqual(driver1.formulaOneDriverNotesTitle, model.formulaOneDrivers[0].formulaOneDriverNotesTitle)
     }
 
     func testPerformanceExample() {

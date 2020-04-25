@@ -18,6 +18,18 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     /// Empty imageURL String
     var imageURL = ""
     
+    /// formulaOneDriverImageTitle Text
+    @Published var formulaOneDriverImageTitle = "Driver Image:"
+    
+    /// formulaOneDriverTeamTitle Text
+    @Published var formulaOneDriverTeamTitle = "Driver Team:"
+    
+    /// formulaOneDriverChampionshipTitle Text
+    @Published var formulaOneDriverChampionshipsTitle = "Driver Titles:"
+    
+    /// formulaOneDriverNotesTitle Text
+    @Published var formulaOneDriverNotesTitle = "Driver Notes:"
+    
     /// Formula One Driver Image
     @Published var formulaOneDriverImage: String
     
@@ -39,6 +51,10 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
      /// Need CodingKeys to Enocde and Decode the JSON Data
     enum CodingKeys: String, CodingKey {
         case imageURL
+        case formulaOneDriverImageTitle
+        case formulaOneDriverTeamTitle
+        case formulaOneDriverChampionshipsTitle
+        case formulaOneDriverNotesTitle
         case formulaOneDriverImage
         case formulaOneDriverName
         case formulaOneDriverTeam
@@ -71,6 +87,10 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         imageURL = try container.decode(String.self, forKey: .imageURL)
+        formulaOneDriverImageTitle = try container.decode(String.self, forKey: .formulaOneDriverImageTitle)
+        formulaOneDriverTeamTitle = try container.decode(String.self, forKey: .formulaOneDriverTeamTitle)
+        formulaOneDriverChampionshipsTitle = try container.decode(String.self, forKey: .formulaOneDriverChampionshipsTitle)
+        formulaOneDriverNotesTitle = try container.decode(String.self, forKey: .formulaOneDriverNotesTitle)
         formulaOneDriverImage = try container.decode(String.self, forKey: .formulaOneDriverImage)
         formulaOneDriverName = try container.decode(String.self, forKey: .formulaOneDriverName)
         formulaOneDriverTeam = try container.decode(String.self, forKey: .formulaOneDriverTeam)
@@ -87,7 +107,10 @@ class FormulaOneDriver: ObservableObject, Identifiable, Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(imageURL, forKey: .imageURL)
-        try container.encode(formulaOneDriverImage, forKey: .formulaOneDriverImage)
+        try container.encode(formulaOneDriverImageTitle, forKey: .formulaOneDriverImageTitle)
+        try container.encode(formulaOneDriverTeamTitle, forKey: .formulaOneDriverTeamTitle)
+        try container.encode(formulaOneDriverChampionshipsTitle, forKey: .formulaOneDriverChampionshipsTitle)
+        try container.encode(formulaOneDriverNotesTitle, forKey: .formulaOneDriverNotesTitle)
         try container.encode(formulaOneDriverImage, forKey: .formulaOneDriverImage)
         try container.encode(formulaOneDriverName, forKey: .formulaOneDriverName)
         try container.encode(formulaOneDriverTeam, forKey: .formulaOneDriverTeam)
