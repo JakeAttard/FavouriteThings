@@ -114,6 +114,34 @@ class FavouriteThingsTests: XCTestCase {
         XCTAssert((formulaOneDriver?.getFormulaOneDriverImage() as Any) is Image)
     }
     
+    /// Testing the DriverImage TextLabel
+    func testDriverImageTextLabel() {
+        let driverImageText = "Driver Image:"
+        XCTAssert(viewModel?.driverImage == driverImageText)
+        XCTAssertEqual(viewModel?.driverImage, driverImageText)
+    }
+    
+    /// Testing the DriverTeam TextLabel
+    func testDriverTeamTextLabel() {
+        let driverTeamText = "Driver Team:"
+        XCTAssert(viewModel?.driverTeam == driverTeamText)
+        XCTAssertEqual(viewModel?.driverTeam, driverTeamText)
+    }
+    
+    /// Testing the driverTitles TextLabel
+    func testDriverTitlesTextLabel() {
+        let driverTitlesText = "Driver Titles:"
+        XCTAssert(viewModel?.driverTitles == driverTitlesText)
+        XCTAssertEqual(viewModel?.driverTitles, driverTitlesText)
+    }
+    
+    /// Testing the driverNotes TextLabel
+    func testDriverNotesTextLabel() {
+        let driverNotesText = "Driver Notes:"
+        XCTAssert(viewModel?.driverNotes == driverNotesText)
+        XCTAssertEqual(viewModel?.driverNotes, driverNotesText)
+    }
+    
     /// Testing the JSON File (Encoding and Decoding)
     
     func testJSONFile() {
@@ -123,6 +151,8 @@ class FavouriteThingsTests: XCTestCase {
         }
         
         viewModel.addFormulaOneDriver(formulaOneDriver: formulaOneDriver!)
+        
+        /// Encoding successful and saving in the ViewModel. Error message added in the catch if fails
         do {
             let json = JSONEncoder()
             
@@ -133,6 +163,7 @@ class FavouriteThingsTests: XCTestCase {
             XCTFail("JSON Encode failed.")
         }
         
+        /// Decoding successful.  Error message added in the catch if fails
         do {
             if let data = try? Data(contentsOf: fileURL) {
                 let decoder = JSONDecoder()
@@ -145,7 +176,9 @@ class FavouriteThingsTests: XCTestCase {
             XCTFail("JSON Decode failed.")
         }
         
+        /// Testing that it was saved correctly in the ViewModel
         XCTAssertEqual(viewModel.formulaOneDrivers.count, 1)
+        
     }
 
     func testPerformanceExample() {

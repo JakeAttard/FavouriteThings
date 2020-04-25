@@ -34,13 +34,13 @@ class ViewModel: ObservableObject, Identifiable, Codable {
     
     static var currentTeamPlaceholder: String = "Current Team:"
     
-    @Published var driverTitles: String = "Titles:"
+    @Published var driverTitles: String = "Driver Titles:"
     
-    static var titlesPlaceholder: String = "Titles:"
+    static var titlesPlaceholder: String = "Driver Titles:"
     
-    @Published var driverNotes: String = "Notes:"
+    @Published var driverNotes: String = "Driver Notes:"
     
-    static var notesPlaceholder: String = "Notes:"
+    static var notesPlaceholder: String = "Driver Notes:"
     
     static var addNotes: String = "Add note..."
     
