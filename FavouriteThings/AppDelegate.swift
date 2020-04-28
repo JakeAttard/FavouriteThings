@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "FormulaOne")
+        let container = NSPersistentContainer(name: "Model")
         container.loadPersistentStores { (storeDescription, error) in
             if let actualError = error as NSError? {
                 fatalError("Unresolved error \(actualError): \(actualError.userInfo)")

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RowView: View {
-    
+    @Environment(\.managedObjectContext) var context
     @ObservedObject var model: FormulaOneDriver
     
     
@@ -17,17 +17,17 @@ struct RowView: View {
         
         HStack {
             /// Formula One Driver Image
-            self.model.getFormulaOneDriverImage()
-                .resizable()
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
-                .shadow(radius: 10).scaledToFit()
+//            self.model.getFormulaOneDriverImage()
+//                .resizable()
+//                .frame(width: 50, height: 50)
+//                .clipShape(Circle())
+//                .shadow(radius: 10).scaledToFit()
             
             /// Formula One Driver Name
-            Text(model.formulaOneDriverName)
+            Text(model.nameString)
             
-            /// Formula One Driver Team
-            Text(model.formulaOneDriverTeam)
+            // Formula One Driver Team
+            Text(model.teamString)
                 .fontWeight(.light)
                 .italic()
                 .padding(.leading)

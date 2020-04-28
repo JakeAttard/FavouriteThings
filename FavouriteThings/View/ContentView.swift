@@ -13,19 +13,23 @@ ContentView is bring in the MasterView in to be displayed.
 */
 
 struct ContentView: View {
-    
-    @ObservedObject var viewModel: ViewModel
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \FormulaOneDrivers.listTitle, ascending: true)]) var formulaOneDrivers: FetchedResults<FormulaOneDrivers>
     
     var body: some View {
         NavigationView {
             
             /// Bringing in MasterView contents
-            MasterView(viewModel: viewModel)
+            MasterView(formulaOneDrivers: formulaOneDrivers.first ?? FormulaOneDrivers(context: context))
                 .navigationBarItems(
                     leading: EditButton(),
                     trailing: Button(
                         action: {
-                            withAnimation { self.viewModel.addFormulaOneDriver(formulaOneDriver: FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverNote: "")) }
+                            withAnimation {
+                                let formulaOneDriver = FormulaOneDriver(context: self.context)
+                                formulaOneDriver.formulaOneDriver = self.formulaOneDrivers.first
+                                try? self.context.save()
+                            }
                         }
                         
                     ) {

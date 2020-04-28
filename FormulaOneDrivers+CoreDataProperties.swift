@@ -1,8 +1,8 @@
 //
-//  FormulaOne+CoreDataProperties.swift
+//  FormulaOneDrivers+CoreDataProperties.swift
 //  FavouriteThings
 //
-//  Created by Jake Attard on 28/4/20.
+//  Created by Jake Attard on 29/4/20.
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 //
@@ -11,19 +11,19 @@ import Foundation
 import CoreData
 
 
-extension FormulaOne {
+extension FormulaOneDrivers {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<FormulaOne> {
-        return NSFetchRequest<FormulaOne>(entityName: "FormulaOne")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<FormulaOneDrivers> {
+        return NSFetchRequest<FormulaOneDrivers>(entityName: "FormulaOneDrivers")
     }
 
-    @NSManaged public var title: String?
+    @NSManaged public var listTitle: String?
     @NSManaged public var drivers: NSOrderedSet?
 
 }
 
 // MARK: Generated accessors for drivers
-extension FormulaOne {
+extension FormulaOneDrivers {
 
     @objc(insertObject:inDriversAtIndex:)
     @NSManaged public func insertIntoDrivers(_ value: FormulaOneDriver, at idx: Int)

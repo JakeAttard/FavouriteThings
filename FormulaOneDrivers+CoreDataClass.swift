@@ -1,5 +1,5 @@
 //
-//  FormulaOneDriver+CoreDataClass.swift
+//  FormulaOneDrivers+CoreDataClass.swift
 //  FavouriteThings
 //
 //  Created by Jake Attard on 29/4/20.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(FormulaOneDriver)
-public class FormulaOneDriver: NSManagedObject {
+@objc(FormulaOneDrivers)
+public class FormulaOneDrivers: NSManagedObject {
 
 }

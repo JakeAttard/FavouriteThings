@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="FormulaOne" representedClassName="FormulaOne" syncable="YES" codeGenerationType="class">
-        <attribute name="title" attributeType="String" defaultValueString="List Title"/>
-        <relationship name="drivers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="FormulaOneDriver" inverseName="formulaOne" inverseEntity="FormulaOneDriver"/>
-    </entity>
     <entity name="FormulaOneDriver" representedClassName="FormulaOneDriver" syncable="YES" codeGenerationType="class">
-        <attribute name="name" attributeType="String" defaultValueString=""/>
-        <relationship name="formulaOne" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FormulaOne" inverseName="drivers" inverseEntity="FormulaOne"/>
+        <attribute name="image" attributeType="String" defaultValueString="Add Image"/>
+        <attribute name="imageLabel" attributeType="String" defaultValueString="Enter Image Label"/>
+        <attribute name="name" attributeType="String" defaultValueString="Add name"/>
+        <attribute name="notes" attributeType="String" defaultValueString="Add Notes"/>
+        <attribute name="notesLabel" attributeType="String" defaultValueString="Enter Notes Label"/>
+        <attribute name="team" attributeType="String" defaultValueString="Add Team"/>
+        <attribute name="teamLabel" attributeType="String" defaultValueString="Add Team"/>
+        <attribute name="titles" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="titlesLabel" attributeType="String" defaultValueString="Enter Titles Label"/>
+        <relationship name="formulaOneDriver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FormulaOneDrivers" inverseName="formulaOneDrivers" inverseEntity="FormulaOneDrivers"/>
+    </entity>
+    <entity name="FormulaOneDrivers" representedClassName="FormulaOneDrivers" syncable="YES" codeGenerationType="class">
+        <attribute name="listTitle" attributeType="String" defaultValueString="List Title"/>
+        <relationship name="formulaOneDrivers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="FormulaOneDriver" inverseName="formulaOneDriver" inverseEntity="FormulaOneDriver"/>
     </entity>
     <elements>
-        <element name="FormulaOneDriver" positionX="15.47265625" positionY="14.51171875" width="128" height="73"/>
-        <element name="FormulaOne" positionX="-264.44140625" positionY="-21.5078125" width="128" height="73"/>
+        <element name="FormulaOneDriver" positionX="15.47265625" positionY="14.51171875" width="128" height="193"/>
+        <element name="FormulaOneDrivers" positionX="-266.48046875" positionY="15.015625" width="128" height="73"/>
     </elements>
 </model>
