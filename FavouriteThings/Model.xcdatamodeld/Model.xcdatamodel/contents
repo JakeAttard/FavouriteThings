@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FormulaOne" representedClassName="FormulaOne" syncable="YES" codeGenerationType="class">
+        <attribute name="title" attributeType="String" defaultValueString="List Title"/>
+        <relationship name="drivers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="FormulaOneDriver" inverseName="formulaOne" inverseEntity="FormulaOneDriver"/>
+    </entity>
+    <entity name="FormulaOneDriver" representedClassName="FormulaOneDriver" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <relationship name="formulaOne" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FormulaOne" inverseName="drivers" inverseEntity="FormulaOne"/>
+    </entity>
+    <elements>
+        <element name="FormulaOneDriver" positionX="15.47265625" positionY="14.51171875" width="128" height="73"/>
+        <element name="FormulaOne" positionX="-264.44140625" positionY="-21.5078125" width="128" height="73"/>
+    </elements>
+</model>
