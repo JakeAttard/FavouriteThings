@@ -47,6 +47,5 @@ struct MasterView: View {
                 }
             }
         }.navigationBarTitle(mode?.wrappedValue == .active ? "": formulaOneDrivers.title ?? "")
-//        }.navigationBarTitle(formulaOneDrivers.first?.title ?? "")
     }
 }

@@ -18,19 +18,21 @@ struct DetailView: View {
     @ObservedObject var model: FormulaOneDriver
     
     /// notes is a empty String where users can add additional information about there drivers
-    @State public var notes: String = ""
+//    @State public var notes: String = ""
     
     var body: some View {
         
         VStack {
-//            Group {
-            HStack {
+            Group {
                 
+                /// TextField for the name of the driver
                 TextField("", text: $model.nameString)
+                    .multilineTextAlignment(TextAlignment.center)
+                    .font(Font.system(size: 40, weight: .bold, design: .serif))
+                    .padding(.bottom, 20.0)
+                    
                 TextField("", text: $model.imageString)
-//                TextField(model.titlesInt, text: $model.titlesInt)
                 TextField("", text: $model.notesString)
-            }
                 
 //                /// Getting the current FormulaOneDriver Image
 //                self.model.getFormulaOneDriverImage()
@@ -40,12 +42,7 @@ struct DetailView: View {
 //                    .shadow(radius: 10)
 //                    .scaledToFit()
 //                    .padding(.bottom, 20.0)
-//
-//                /// TextField for formulaOneDriverName
-//                TextField(ViewModel.driverNamePlaceholder, text:  self.$model.formulaOneDriverName)
-//                    .multilineTextAlignment(TextAlignment.center)
-//                    .font(Font.system(size: 40, weight: .bold, design: .serif))
-//                    .padding(.bottom, 20.0)
+                    
 //
 //                HStack {
 //
@@ -97,6 +94,7 @@ struct DetailView: View {
 //            }.padding(.horizontal)
 //                .fixedSize(horizontal: false, vertical: true)
 //            }
+            }
         }
     }
 }
