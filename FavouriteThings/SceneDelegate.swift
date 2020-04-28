@@ -12,7 +12,6 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var viewModel = ViewModel()
     
     /// Formula One Drivers Data
     
@@ -75,53 +74,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
     /// Nicholas Latifi
     var driver20 = FormulaOneDriver(formulaOneDriverImage: "nicholasL", formulaOneDriverName: "Nicholas Latifi", formulaOneDriverTeam: "Williams", formulaOneDriverChampionships: 0, formulaOneDriverNote: "")
-    
-    /// Creating the JSON file and locating it
-    private let fileName = "drivers.json"
-    private let fileManager = FileManager.default
-    lazy private var documentsDir: URL = {
-            fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    }()
-    lazy private var fileURL = documentsDir.appendingPathComponent(fileName)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        /// Decoding the JSON Data
-        do {
-            let t = try Data(contentsOf: fileURL)
-            let decoder = JSONDecoder()
-            let decodedViewModel = try decoder.decode(ViewModel.self, from: t)
-            viewModel = decodedViewModel
-        } catch {
-            print("Could not load \(fileURL.path): \(error)")
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("No app delegate")
         }
         
-        /// Adding the drivers to the viewModel if there is less than one driver
+        let context = appDelegate.persistentContainer.viewContext
         
-        if viewModel.formulaOneDrivers.count < 1 {
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver20)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver19)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver18)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver17)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver16)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver15)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver14)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver13)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver12)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver11)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver10)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver9)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver8)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver7)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver6)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver5)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver4)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver3)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver2)
-            viewModel.addFormulaOneDriver(formulaOneDriver: driver1)
-        }
-        
-        let contentView = ContentView(viewModel: viewModel)
+        let contentView = ContentView().environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

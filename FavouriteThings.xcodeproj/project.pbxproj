@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B011FC6624582C58004B2CA9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B011FC6424582C57004B2CA9 /* Model.xcdatamodeld */; };
-		B011FC6B245830E0004B2CA9 /* FormulaOneDriver+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011FC67245830E0004B2CA9 /* FormulaOneDriver+CoreDataClass.swift */; };
-		B011FC6C245830E0004B2CA9 /* FormulaOneDriver+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011FC68245830E0004B2CA9 /* FormulaOneDriver+CoreDataProperties.swift */; };
-		B011FC6D245830E0004B2CA9 /* FormulaOne+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011FC69245830E0004B2CA9 /* FormulaOne+CoreDataClass.swift */; };
-		B011FC6E245830E0004B2CA9 /* FormulaOne+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011FC6A245830E0004B2CA9 /* FormulaOne+CoreDataProperties.swift */; };
+		B011FC71245831C2004B2CA9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B011FC70245831C1004B2CA9 /* CoreData.framework */; };
 		B0C3EFFE2449E4230023B4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFD2449E4230023B4E2 /* AppDelegate.swift */; };
 		B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFF2449E4230023B4E2 /* SceneDelegate.swift */; };
 		B0C3F0022449E4230023B4E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3F0012449E4230023B4E2 /* ContentView.swift */; };
@@ -50,6 +47,7 @@
 		B011FC68245830E0004B2CA9 /* FormulaOneDriver+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDriver+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B011FC69245830E0004B2CA9 /* FormulaOne+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOne+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B011FC6A245830E0004B2CA9 /* FormulaOne+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOne+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B011FC70245831C1004B2CA9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B0C3EFFA2449E4230023B4E2 /* FavouriteThings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavouriteThings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C3EFFD2449E4230023B4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C3EFFF2449E4230023B4E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B011FC71245831C2004B2CA9 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B011FC6F245831C1004B2CA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B011FC70245831C1004B2CA9 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0150988244FB22100C49884 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +122,7 @@
 				B0C3F0132449E4250023B4E2 /* FavouriteThingsTests */,
 				B0C3F01E2449E4250023B4E2 /* FavouriteThingsUITests */,
 				B0C3EFFB2449E4230023B4E2 /* Products */,
+				B011FC6F245831C1004B2CA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -322,16 +330,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C3F0342449E8CA0023B4E2 /* MasterView.swift in Sources */,
-				B011FC6C245830E0004B2CA9 /* FormulaOneDriver+CoreDataProperties.swift in Sources */,
 				B0C3F0322449E89B0023B4E2 /* ViewModel.swift in Sources */,
 				B0C3EFFE2449E4230023B4E2 /* AppDelegate.swift in Sources */,
 				B0C3F0382449E8EC0023B4E2 /* RowView.swift in Sources */,
-				B011FC6E245830E0004B2CA9 /* FormulaOne+CoreDataProperties.swift in Sources */,
 				B0C3F0362449E8E30023B4E2 /* DetailView.swift in Sources */,
 				B011FC6624582C58004B2CA9 /* Model.xcdatamodeld in Sources */,
 				B0C3F0302449E7680023B4E2 /* FormulaOneDriver.swift in Sources */,
-				B011FC6B245830E0004B2CA9 /* FormulaOneDriver+CoreDataClass.swift in Sources */,
-				B011FC6D245830E0004B2CA9 /* FormulaOne+CoreDataClass.swift in Sources */,
 				B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */,
 				B0C3F0022449E4230023B4E2 /* ContentView.swift in Sources */,
 			);

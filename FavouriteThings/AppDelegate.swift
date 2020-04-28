@@ -6,6 +6,7 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 @UIApplicationMain
@@ -32,6 +33,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "FormulaOne")
+        container.loadPersistentStores { (storeDescription, error) in
+            if let actualError = error as NSError? {
+                fatalError("Unresolved error \(actualError): \(actualError.userInfo)")
+            }
+        }
+        return container
+    }()
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Error \(nserror): \(nserror.userInfo)")
+            }
+        }
+    }
 }
 
