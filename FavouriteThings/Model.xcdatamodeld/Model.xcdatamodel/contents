@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FormulaOneDriver" representedClassName="FormulaOneDriver" syncable="YES" codeGenerationType="class">
-        <attribute name="image" attributeType="String" defaultValueString=""/>
         <attribute name="imageLabel" attributeType="String" defaultValueString="Image:"/>
+        <attribute name="imageName" attributeType="String" defaultValueString=""/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="nation" attributeType="String" defaultValueString=""/>
         <attribute name="nationLabel" attributeType="String" defaultValueString="Nation:"/>
@@ -19,7 +20,7 @@
         <relationship name="formulaOneDrivers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="FormulaOneDriver" inverseName="formulaOneDriver" inverseEntity="FormulaOneDriver"/>
     </entity>
     <elements>
-        <element name="FormulaOneDriver" positionX="15.47265625" positionY="14.51171875" width="128" height="223"/>
+        <element name="FormulaOneDriver" positionX="15.47265625" positionY="14.51171875" width="128" height="238"/>
         <element name="FormulaOneDrivers" positionX="-266.48046875" positionY="15.015625" width="128" height="73"/>
     </elements>
 </model>

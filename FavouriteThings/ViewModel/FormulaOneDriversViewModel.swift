@@ -11,10 +11,6 @@ import Foundation
 
 extension FormulaOneDrivers {
     
-//    var entries: [FormulaOneDriver] {
-//        (self.drivers?.array as? [FormulaOneDriver]) ?? []
-//    }
-    
     var entries: [FormulaOneDriver] {
         set {formulaOneDrivers = NSOrderedSet(array: newValue)}
         get {(formulaOneDrivers?.array as? [FormulaOneDriver]) ?? []}

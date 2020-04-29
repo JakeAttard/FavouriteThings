@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import Foundation
+import SwiftUI
 
 
 extension FormulaOneDriver {
@@ -49,8 +49,13 @@ extension FormulaOneDriver {
     }
     
     var imageString: String {
-        get { image ?? "" }
-        set { image = newValue }
+        get { imageName ?? "" }
+        set { imageName = newValue }
+    }
+    
+    var imageURLString: String {
+        get { imageURL ?? "" }
+        set { imageURL = newValue }
     }
     
     var teamString: String {
@@ -96,5 +101,15 @@ extension FormulaOneDriver {
     var labelNotes: String {
         get { notesLabel ?? "" }
         set { notesLabel = newValue }
+    }
+    
+    func updateImage() -> Image {
+        guard let imageURL = imageURL,
+            let url = URL(string: imageURL),
+            let imageData = try? Data(contentsOf: url),
+            let uiImage = UIImage(data: imageData) else {
+                return Image(imageName ?? "maxV")
+            }
+        return Image(uiImage: uiImage)
     }
 }

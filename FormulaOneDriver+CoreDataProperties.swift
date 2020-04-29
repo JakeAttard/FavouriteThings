@@ -18,7 +18,8 @@ extension FormulaOneDriver {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var image: String?
+    @NSManaged public var imageName: String?
+    @NSManaged public var imageURL: String?
     @NSManaged public var team: String?
     @NSManaged public var nation: String?
     @NSManaged public var sponsor: Double?

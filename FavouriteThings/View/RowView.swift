@@ -16,12 +16,12 @@ struct RowView: View {
     var body: some View {
         
         HStack {
-            /// Formula One Driver Image
-//            self.model.getFormulaOneDriverImage()
-//                .resizable()
-//                .frame(width: 50, height: 50)
-//                .clipShape(Circle())
-//                .shadow(radius: 10).scaledToFit()
+            /// Driver Image
+            self.model.updateImage()
+                .resizable()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .shadow(radius: 10).scaledToFit()
             
             /// Formula One Driver Name
             Text(model.nameString)
