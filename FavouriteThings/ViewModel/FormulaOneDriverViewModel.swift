@@ -12,16 +12,35 @@ import Foundation
 
 extension FormulaOneDriver {
     
+    /// Left hand side TextField Placeholders
+    
+    /// Driver Name Label Placeholder Text variable for the TextField
     static var nameLabelPlaceholderText:  String = "Driver Name"
+    
+    /// Team Name Label Placeholder Text variable for the TextField
     static var teamNameLabelPlaceholderText:  String = "Team:"
+    
+    /// Nation Label Placeholder Text variable for the TextField
     static var nationLabelPlaceholderText:  String = "Nation:"
+    
+    /// Sponsor Label Placeholder Text variable for the TextField
     static var sponsorLabelPlaceholderText:  String = "Sponsor:"
+    
+    /// Notes Label Placeholder Text variable for the TextField
     static var notesLabelPlaceholderText:  String = "Notes:"
 
+    /// Right hand side TextField Placeholders
     
+    /// TeamName Placeholder Text variable for the TextField
     static var teamNamePlaceholderText:  String = "Add Driver Team"
+    
+    /// Nation Placeholder Text variable for the TextField
     static var nationPlaceholderText:  String = "Add Driver Nation"
+    
+    /// Sponsor Placeholder Text variable for the TextField
     static var sponsorPlaceholderText:  String = "Add Driver Sponsor"
+    
+    /// Notes Placeholder Text variable for the TextField
     static var notesPlaceholderText:  String = "Add Driver Notes"
     
     var nameString: String {
