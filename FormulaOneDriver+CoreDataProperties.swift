@@ -21,12 +21,12 @@ extension FormulaOneDriver {
     @NSManaged public var image: String?
     @NSManaged public var team: String?
     @NSManaged public var nation: String?
-    @NSManaged public var title: Double?
+    @NSManaged public var sponsor: Double?
     @NSManaged public var notes: String?
     @NSManaged public var imageLabel: String?
     @NSManaged public var teamLabel: String?
     @NSManaged public var nationLabel: String?
-    @NSManaged public var titlesLabel: String?
+    @NSManaged public var sponsorLabel: String?
     @NSManaged public var notesLabel: String?
     @NSManaged public var driver: FormulaOneDrivers?
 

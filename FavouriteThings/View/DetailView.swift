@@ -36,6 +36,9 @@ struct DetailView: View {
                         TextField("", text: $model.labelNation)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
+                        TextField("", text: $model.labelSponsor)
+                        .font(Font.system(size: 15, weight: .medium, design: .serif))
+                        
                         TextField("", text: $model.labelNotes)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
 
@@ -46,6 +49,9 @@ struct DetailView: View {
                             .font(Font.system(size: 16, weight: .bold, design: .serif))
                         
                         TextField("", text: $model.nationString)
+                        .font(Font.system(size: 16, weight: .bold, design: .serif))
+                        
+                        TextField("", text: $model.sponsorString)
                         .font(Font.system(size: 16, weight: .bold, design: .serif))
                         
                         TextField("", text: $model.notesString)

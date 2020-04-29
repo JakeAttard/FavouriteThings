@@ -6,16 +6,16 @@
         <attribute name="name" attributeType="String" defaultValueString="Driver Name"/>
         <attribute name="nation" attributeType="String" defaultValueString="Add Driver Nation"/>
         <attribute name="nationLabel" attributeType="String" defaultValueString="Nation:"/>
-        <attribute name="notes" attributeType="String" defaultValueString="Add Notes"/>
-        <attribute name="notesLabel" attributeType="String" defaultValueString="Enter Notes Label"/>
-        <attribute name="team" attributeType="String" defaultValueString="Current Team"/>
+        <attribute name="notes" attributeType="String" defaultValueString="Add Driver Notes"/>
+        <attribute name="notesLabel" attributeType="String" defaultValueString="Notes:"/>
+        <attribute name="sponsor" attributeType="String" defaultValueString="Add Sponsor"/>
+        <attribute name="sponsorLabel" attributeType="String" defaultValueString="Sponor:"/>
+        <attribute name="team" attributeType="String" defaultValueString="Add Current Team"/>
         <attribute name="teamLabel" attributeType="String" defaultValueString="Team:"/>
-        <attribute name="titles" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="titlesLabel" attributeType="String" defaultValueString="Enter Titles Label"/>
         <relationship name="formulaOneDriver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FormulaOneDrivers" inverseName="formulaOneDrivers" inverseEntity="FormulaOneDrivers"/>
     </entity>
     <entity name="FormulaOneDrivers" representedClassName="FormulaOneDrivers" syncable="YES" codeGenerationType="class">
-        <attribute name="listTitle" attributeType="String" defaultValueString="List Title"/>
+        <attribute name="listTitle" attributeType="String" defaultValueString="Formula One Drivers"/>
         <relationship name="formulaOneDrivers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="FormulaOneDriver" inverseName="formulaOneDriver" inverseEntity="FormulaOneDriver"/>
     </entity>
     <elements>

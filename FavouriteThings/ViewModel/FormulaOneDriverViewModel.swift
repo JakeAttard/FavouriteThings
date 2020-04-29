@@ -31,9 +31,9 @@ extension FormulaOneDriver {
         set { nation = newValue }
     }
     
-    var titlesInt: Double {
-        get { titles }
-        set { titles = newValue }
+    var sponsorString: String {
+        get { sponsor ?? "" }
+        set { sponsor = newValue }
     }
     
     var notesString: String {
@@ -56,9 +56,9 @@ extension FormulaOneDriver {
         set { nationLabel = newValue }
     }
     
-    var labelTitle: String {
-        get { titlesLabel ?? "" }
-        set { titlesLabel = newValue }
+    var labelSponsor: String {
+        get { sponsorLabel ?? "" }
+        set { sponsorLabel = newValue }
     }
     
     var labelNotes: String {
