@@ -26,6 +26,11 @@ extension FormulaOneDriver {
         set { team = newValue }
     }
     
+    var nationString: String {
+        get { nation ?? "" }
+        set { nation = newValue }
+    }
+    
     var titlesInt: Double {
         get { titles }
         set { titles = newValue }
@@ -44,6 +49,11 @@ extension FormulaOneDriver {
     var labelTeam: String {
         get { teamLabel ?? "" }
         set { teamLabel = newValue }
+    }
+    
+    var labelNation: String {
+        get { nationLabel ?? "" }
+        set { nationLabel = newValue }
     }
     
     var labelTitle: String {
