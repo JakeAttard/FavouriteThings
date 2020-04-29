@@ -11,6 +11,19 @@ import Foundation
 
 
 extension FormulaOneDriver {
+    
+    static var nameLabelPlaceholderText:  String = "Driver Name"
+    static var teamNameLabelPlaceholderText:  String = "Team:"
+    static var nationLabelPlaceholderText:  String = "Nation:"
+    static var sponsorLabelPlaceholderText:  String = "Sponsor:"
+    static var notesLabelPlaceholderText:  String = "Notes:"
+
+    
+    static var teamNamePlaceholderText:  String = "Add Driver Team"
+    static var nationPlaceholderText:  String = "Add Driver Nation"
+    static var sponsorPlaceholderText:  String = "Add Driver Sponsor"
+    static var notesPlaceholderText:  String = "Add Driver Notes"
+    
     var nameString: String {
         get { name ?? "" }
         set { name = newValue }

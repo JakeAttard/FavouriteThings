@@ -23,38 +23,38 @@ struct DetailView: View {
             Group {
                 
                 /// TextField for the name of the driver
-                TextField("", text: $model.nameString)
+                TextField(FormulaOneDriver.nameLabelPlaceholderText, text: $model.nameString)
                     .multilineTextAlignment(TextAlignment.center)
                     .font(Font.system(size: 40, weight: .bold, design: .serif))
                     .padding(.bottom, 20.0)
                 
                 HStack {
                     VStack {
-                        TextField("", text: $model.labelTeam)
+                        TextField(FormulaOneDriver.teamNameLabelPlaceholderText, text: $model.labelTeam)
                             .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
-                        TextField("", text: $model.labelNation)
+                        TextField(FormulaOneDriver.nationLabelPlaceholderText, text: $model.labelNation)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
-                        TextField("", text: $model.labelSponsor)
+                        TextField(FormulaOneDriver.sponsorLabelPlaceholderText, text: $model.labelSponsor)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
-                        TextField("", text: $model.labelNotes)
+                        TextField(FormulaOneDriver.notesLabelPlaceholderText, text: $model.labelNotes)
                         .font(Font.system(size: 15, weight: .medium, design: .serif))
 
                     }.padding(.leading)
                     
                     VStack {
-                        TextField("", text: $model.teamString)
+                        TextField(FormulaOneDriver.teamNamePlaceholderText, text: $model.teamString)
                             .font(Font.system(size: 16, weight: .bold, design: .serif))
                         
-                        TextField("", text: $model.nationString)
+                        TextField(FormulaOneDriver.nationPlaceholderText, text: $model.nationString)
                         .font(Font.system(size: 16, weight: .bold, design: .serif))
                         
-                        TextField("", text: $model.sponsorString)
+                        TextField(FormulaOneDriver.sponsorPlaceholderText, text: $model.sponsorString)
                         .font(Font.system(size: 16, weight: .bold, design: .serif))
                         
-                        TextField("", text: $model.notesString)
+                        TextField(FormulaOneDriver.notesPlaceholderText, text: $model.notesString)
                         .font(Font.system(size: 16, weight: .bold, design: .serif))
                     }.padding(.leading)
                 }

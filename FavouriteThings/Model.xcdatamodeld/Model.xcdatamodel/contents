@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FormulaOneDriver" representedClassName="FormulaOneDriver" syncable="YES" codeGenerationType="class">
-        <attribute name="image" attributeType="String" defaultValueString="Add Image"/>
+        <attribute name="image" attributeType="String" defaultValueString=""/>
         <attribute name="imageLabel" attributeType="String" defaultValueString="Image:"/>
-        <attribute name="name" attributeType="String" defaultValueString="Driver Name"/>
-        <attribute name="nation" attributeType="String" defaultValueString="Add Driver Nation"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="nation" attributeType="String" defaultValueString=""/>
         <attribute name="nationLabel" attributeType="String" defaultValueString="Nation:"/>
-        <attribute name="notes" attributeType="String" defaultValueString="Add Driver Notes"/>
+        <attribute name="notes" attributeType="String" defaultValueString=""/>
         <attribute name="notesLabel" attributeType="String" defaultValueString="Notes:"/>
-        <attribute name="sponsor" attributeType="String" defaultValueString="Add Sponsor"/>
+        <attribute name="sponsor" attributeType="String" defaultValueString=""/>
         <attribute name="sponsorLabel" attributeType="String" defaultValueString="Sponor:"/>
-        <attribute name="team" attributeType="String" defaultValueString="Add Current Team"/>
+        <attribute name="team" attributeType="String" defaultValueString=""/>
         <attribute name="teamLabel" attributeType="String" defaultValueString="Team:"/>
         <relationship name="formulaOneDriver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FormulaOneDrivers" inverseName="formulaOneDrivers" inverseEntity="FormulaOneDrivers"/>
     </entity>
