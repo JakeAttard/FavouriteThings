@@ -40,10 +40,8 @@ struct MasterView: View {
                     indices.forEach { self.formulaOneDrivers.removeFromFormulaOneDrivers(at: $0)
                         
                     }
-//                }.onMove { (indices, destination) in
-//                    self.viewModel.formulaOneDrivers.move(fromOffsets: indices, toOffset: destination)
-//                }
-//                }
+                }.onMove { (indices, destination) in
+                    self.formulaOneDrivers.entries.move(fromOffsets: indices, toOffset: destination)
                 }
             }
         }.navigationBarTitle(mode?.wrappedValue == .active ? "": formulaOneDrivers.title ?? "")
