@@ -3,15 +3,15 @@
     <entity name="FormulaOneDriver" representedClassName="FormulaOneDriver" syncable="YES" codeGenerationType="class">
         <attribute name="imageLabel" attributeType="String" defaultValueString="Image:"/>
         <attribute name="imageName" attributeType="String" defaultValueString=""/>
-        <attribute name="imageURL" optional="YES" attributeType="String"/>
-        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="imageURL" attributeType="String" defaultValueString="https://i1.rgstatic.net/ii/profile.image/556096693125120-1509595191844_Q512/Dimitri_Joukoff.jpg"/>
+        <attribute name="name" attributeType="String" defaultValueString="Dimitri Joukoff"/>
         <attribute name="nation" attributeType="String" defaultValueString=""/>
         <attribute name="nationLabel" attributeType="String" defaultValueString="Nation:"/>
         <attribute name="notes" attributeType="String" defaultValueString=""/>
         <attribute name="notesLabel" attributeType="String" defaultValueString="Notes:"/>
         <attribute name="sponsor" attributeType="String" defaultValueString=""/>
         <attribute name="sponsorLabel" attributeType="String" defaultValueString="Sponor:"/>
-        <attribute name="team" attributeType="String" defaultValueString=""/>
+        <attribute name="team" attributeType="String" defaultValueString="Workshop Tutor"/>
         <attribute name="teamLabel" attributeType="String" defaultValueString="Team:"/>
         <relationship name="formulaOneDriver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FormulaOneDrivers" inverseName="formulaOneDrivers" inverseEntity="FormulaOneDrivers"/>
     </entity>

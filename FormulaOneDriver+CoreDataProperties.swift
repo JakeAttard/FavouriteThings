@@ -13,6 +13,7 @@ import CoreData
 
 extension FormulaOneDriver {
 
+    /// fetching the request of FormulaOneDriver with entityName FormulaOneDriver
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FormulaOneDriver> {
         return NSFetchRequest<FormulaOneDriver>(entityName: "FormulaOneDriver")
     }
