@@ -38,7 +38,7 @@ struct DetailView: View {
                 
                 HStack {
                     VStack {
-                        TextField("Image", text: $model.labelTeam)
+                        TextField(FormulaOneDriver.imageLabelPlaceholderText, text: $model.labelImage)
                             .font(Font.system(size: 15, weight: .medium, design: .serif))
                         
                         TextField(FormulaOneDriver.teamNameLabelPlaceholderText, text: $model.labelTeam)
@@ -56,7 +56,7 @@ struct DetailView: View {
                     }.padding(.leading)
                     
                     VStack {
-                        TextField("Add Image URL", text: $model.imageURLString)
+                        TextField(FormulaOneDriver.imagePlaceholderText, text: $model.imageURLString)
                         .font(Font.system(size: 16, weight: .bold, design: .serif))
                         
                         TextField(FormulaOneDriver.teamNamePlaceholderText, text: $model.teamString)
