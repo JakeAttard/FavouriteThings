@@ -11,11 +11,13 @@ import Foundation
 
 extension FormulaOneDrivers {
     
+    /// Creating the FormulaOneDriver Array
     var entries: [FormulaOneDriver] {
         set {formulaOneDrivers = NSOrderedSet(array: newValue)}
         get {(formulaOneDrivers?.array as? [FormulaOneDriver]) ?? []}
     }
     
+    /// ListTitle
     var title: String {
         set(newTitle) { self.listTitle = newTitle }
         get { listTitle ?? "" }

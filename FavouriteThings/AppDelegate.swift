@@ -32,7 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+    
+    /// Persistent Container is created and returns a container
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Model")
         container.loadPersistentStores { (storeDescription, error) in
@@ -43,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
+    /// Saving the Context in the Persistent Container
     func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {

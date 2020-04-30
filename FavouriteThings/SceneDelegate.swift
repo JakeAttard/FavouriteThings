@@ -42,6 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     formulaOneDriversArray.append(formulaOneDrivers)
                     appDelegate.saveContext()
                     
+                    /// Sample Data Driver 1
                     var formulaOneDriver = FormulaOneDriver(context: context)
                     formulaOneDriver.name = "Lewish Hamilton"
                     formulaOneDriver.imageURL = "https://www.formula1.com/content/fom-website/en/drivers/lewis-hamilton/_jcr_content/image.img.640.medium.jpg/1584013371803.jpg"
@@ -51,6 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     formulaOneDriver.notes = "7 Time World Champion"
                     formulaOneDrivers.addToFormulaOneDrivers(formulaOneDriver)
                     
+                    /// Sample Data Driver 2
                     formulaOneDriver = FormulaOneDriver(context: context)
                     formulaOneDriver.name = "Sebstain Vettel"
                     formulaOneDriver.imageURL = "https://www.formula1.com/content/fom-website/en/drivers/sebastian-vettel/_jcr_content/image.img.640.medium.jpg/1584013014200.jpg"
@@ -60,6 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     formulaOneDriver.notes = "4 Time World Champion"
                     formulaOneDrivers.addToFormulaOneDrivers(formulaOneDriver)
                     
+                    /// Sample Data Driver 3
                     formulaOneDriver = FormulaOneDriver(context: context)
                     formulaOneDriver.name = "Max Verstappen"
                     formulaOneDriver.imageURL = "https://www.formula1.com/content/fom-website/en/drivers/max-verstappen/_jcr_content/image.img.640.medium.jpg/1584012927837.jpg"
@@ -113,6 +116,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
        
+        /// Save changes in the application's managed object context when the application is closed to the background.
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError()
         }
