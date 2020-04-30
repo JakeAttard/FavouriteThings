@@ -49,6 +49,9 @@ extension FormulaOneDriver {
     /// Notes Placeholder Text variable for the TextField
     static var notesPlaceholderText:  String = "Add Driver Notes"
     
+    /// List Title Placeholder Text
+    static var listTitlePlaceholderText: String = "Formula One Drivers"
+    
     /// variable nameString getting the name value from CoreData to the variable
     var nameString: String {
         get { name ?? "" }

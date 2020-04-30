@@ -9,14 +9,17 @@
 import SwiftUI
 
 struct RowView: View {
+    /// Getting the context from the @Environment managedObjectContext
     @Environment(\.managedObjectContext) var context
+    
+    /// Calling the FormulaOneDriver in a new variable called model
     @ObservedObject var model: FormulaOneDriver
     
     
     var body: some View {
         
         HStack {
-            /// Driver Image
+            /// Formula One Driver Image
             self.model.updateImage()
                 .resizable()
                 .frame(width: 50, height: 50)

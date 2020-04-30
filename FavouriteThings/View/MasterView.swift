@@ -14,36 +14,50 @@ import SwiftUI
 */
 
 struct MasterView: View {
+    /// Getting the context from the @Environment managedObjectContext
     @Environment(\.managedObjectContext) var context
+    
+    /// Calling FormulaOneDrivers in a variable formulaOneDrivers
     @ObservedObject var formulaOneDrivers: FormulaOneDrivers
-
+    
+    /// Getting the mode from the @Enviroment editMode
     @Environment(\.editMode) var mode
     
     var body: some View {
         
         VStack {
             if mode?.wrappedValue == .active {
+                /// ListTitle
                 HStack {
+                    /// List Title Icon
                     Text("📝")
-                    TextField("Enter Title", text: self.$formulaOneDrivers.title ).font(Font.system(.largeTitle).bold())
+                    /// List Title TextField
+                    TextField(FormulaOneDriver.listTitlePlaceholderText, text: self.$formulaOneDrivers.title ).font(Font.system(.largeTitle).bold())
                 }
             }
-            
+            /// List
             List {
                 ForEach(formulaOneDrivers.entries, id: \.self) { formulaOneDriver in
                     NavigationLink(destination: DetailView(model: formulaOneDriver)) {
                         Section {
+                            /// Bringing in the RowView
                             RowView(model: formulaOneDriver)
                         }
                     }
-                }.onDelete { indices in
+                }
+                /// Deleting a formulaOneDriver from the List
+                .onDelete { indices in
                     indices.forEach { self.formulaOneDrivers.removeFromFormulaOneDrivers(at: $0)
                         
                     }
-                }.onMove { (indices, destination) in
+                }
+                /// Moving a formulaOneDriver in the list and reordering it
+                .onMove { (indices, destination) in
                     self.formulaOneDrivers.entries.move(fromOffsets: indices, toOffset: destination)
                 }
             }
-        }.navigationBarTitle(mode?.wrappedValue == .active ? "": formulaOneDrivers.title ?? "")
+        }
+        /// NavigationBarTitle and calling the formulaOneDrivers.title
+        .navigationBarTitle(mode?.wrappedValue == .active ? "": formulaOneDrivers.title )
     }
 }
