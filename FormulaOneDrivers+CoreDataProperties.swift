@@ -16,8 +16,11 @@ extension FormulaOneDrivers {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FormulaOneDrivers> {
         return NSFetchRequest<FormulaOneDrivers>(entityName: "FormulaOneDrivers")
     }
-
+    
+    /// listTitle variable for the entity which is a String
     @NSManaged public var listTitle: String?
+    
+    /// drivers variable for the entity which is a NSOrderedSet
     @NSManaged public var drivers: NSOrderedSet?
 
 }

@@ -17,18 +17,43 @@ extension FormulaOneDriver {
         return NSFetchRequest<FormulaOneDriver>(entityName: "FormulaOneDriver")
     }
 
+    /// name variable for the entity which is a String
     @NSManaged public var name: String?
+    
+    /// imageName variable for the entity which is a String
     @NSManaged public var imageName: String?
+    
+    /// imageURL variable for the entity which is a String
     @NSManaged public var imageURL: String?
+    
+    /// team variable for the entity which is a String
     @NSManaged public var team: String?
+    
+    /// nation variable for the entity which is a String
     @NSManaged public var nation: String?
-    @NSManaged public var sponsor: Double?
+    
+    /// sponsor variable for the entity which is a String
+    @NSManaged public var sponsor: String?
+    
+    /// notes variable for the entity which is a String
     @NSManaged public var notes: String?
+    
+    /// imageLabel variable for the entity which is a String
     @NSManaged public var imageLabel: String?
+    
+    /// teamLabel variable for the entity which is a String
     @NSManaged public var teamLabel: String?
+    
+    /// nationLabel variable for the entity which is a String
     @NSManaged public var nationLabel: String?
+    
+    /// sponsorLabel variable for the entity which is a String
     @NSManaged public var sponsorLabel: String?
+    
+    /// notesLabel variable for the entity which is a String
     @NSManaged public var notesLabel: String?
+    
+    /// variable driver which references the FormulaOneDrivers array
     @NSManaged public var driver: FormulaOneDrivers?
 
 }
