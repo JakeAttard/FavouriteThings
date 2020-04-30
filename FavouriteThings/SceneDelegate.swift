@@ -16,9 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        /// Gets the app delegate from the application, ensuring it is the App Delegate
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("No app delegate")
         }
+        
+        /// Getting the context from the persistentContainer
         
         let context = appDelegate.persistentContainer.viewContext
         
@@ -26,17 +29,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let formulaOneDriversArray: [FormulaOneDrivers] = [FormulaOneDrivers]()
         
+        /// Fetching the Formula One Drivers Array
+        
         let formulaOneDriversFetch: NSFetchRequest<FormulaOneDrivers> = FormulaOneDrivers.fetchRequest()
+        
+        /// Sorting the Formula One Drivers Array
         
         let formulaOneDriversSort: NSSortDescriptor = NSSortDescriptor(keyPath: \FormulaOneDrivers.listTitle, ascending: true)
         
+        /// Fetching the Sorted Array
         formulaOneDriversFetch.sortDescriptors = [formulaOneDriversSort]
         
         do {
             var formulaOneDriversArray = try context.fetch(formulaOneDriversFetch)
+            
+            /// Checking the count of the array
             let count = formulaOneDriversArray.count
             
+            /// If the count of the Array is 0 then add the the following
             if(count == 0) {
+                
+                /// Adding in new Formula One Driver
                 if let formulaOneDrivers = NSEntityDescription.insertNewObject(forEntityName: "FormulaOneDrivers", into: context) as? FormulaOneDrivers {
                     formulaOneDrivers.listTitle = "Formula One Drivers"
                     formulaOneDriversArray.append(formulaOneDrivers)
@@ -72,15 +85,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     formulaOneDriver.notes = "Multiple Race Winner"
                     formulaOneDrivers.addToFormulaOneDrivers(formulaOneDriver)
                     
+                    /// Saving the Sample Data
                     appDelegate.saveContext()
                 }
                 
             }
             
         } catch {
+            /// Error message if the fetch fails
             print("Fetch failed")
         }
         
+        /// contentView is now equal to the ContentView
         let contentView = ContentView().environment(\.managedObjectContext, context)
         
         // Use a UIHostingController as window root view controller.
