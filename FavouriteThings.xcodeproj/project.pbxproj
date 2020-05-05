@@ -13,6 +13,7 @@
 		B011FC7524585965004B2CA9 /* FormulaOneDriverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011FC7424585965004B2CA9 /* FormulaOneDriverViewModel.swift */; };
 		B01285FB2461A3FE004FB1DE /* KeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01285FA2461A3FE004FB1DE /* KeyboardModifier.swift */; };
 		B01285FE2461AB1E004FB1DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FD2461AB1E004FB1DE /* CoreLocation.framework */; };
+		B01286002461B155004FB1DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FF2461B155004FB1DE /* MapKit.framework */; };
 		B0C3EFFE2449E4230023B4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFD2449E4230023B4E2 /* AppDelegate.swift */; };
 		B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFF2449E4230023B4E2 /* SceneDelegate.swift */; };
 		B0C3F0022449E4230023B4E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3F0012449E4230023B4E2 /* ContentView.swift */; };
@@ -50,6 +51,7 @@
 		B011FC7424585965004B2CA9 /* FormulaOneDriverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneDriverViewModel.swift; sourceTree = "<group>"; };
 		B01285FA2461A3FE004FB1DE /* KeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModifier.swift; sourceTree = "<group>"; };
 		B01285FD2461AB1E004FB1DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B01285FF2461B155004FB1DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B045A5EE24586F6700A8F7BD /* FormulaOneDriver+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDriver+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B045A5EF24586F6700A8F7BD /* FormulaOneDriver+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDriver+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B045A5F024586F6700A8F7BD /* FormulaOneDrivers+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDrivers+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B01286002461B155004FB1DE /* MapKit.framework in Frameworks */,
 				B01285FE2461AB1E004FB1DE /* CoreLocation.framework in Frameworks */,
 				B011FC71245831C2004B2CA9 /* CoreData.framework in Frameworks */,
 			);
@@ -103,6 +106,7 @@
 		B011FC6F245831C1004B2CA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B01285FF2461B155004FB1DE /* MapKit.framework */,
 				B01285FD2461AB1E004FB1DE /* CoreLocation.framework */,
 				B011FC70245831C1004B2CA9 /* CoreData.framework */,
 			);

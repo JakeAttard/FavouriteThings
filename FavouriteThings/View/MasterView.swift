@@ -35,18 +35,23 @@ struct MasterView: View {
                     TextField(FormulaOneDriver.listTitlePlaceholderText, text: self.$formulaOneDrivers.title ).font(Font.system(.largeTitle).bold())
                 }
             }
+            
             HStack {
+                /// Gives spacing on the left hand side
                 Spacer()
                 Button("Sort A-Z") {
+                    /// Calling the sortAlphabetically function from the formulaOneDrivers
                     self.formulaOneDrivers.sortAlphabetically()
-                }
+                }.foregroundColor(.black)
                 
+                /// Gives spacing after the Sort A-Z button
                 Spacer()
-                
                 Button("Sort Z-A") {
+                     /// Calling the sortAlphabetically function from the formulaOneDrivers
                     self.formulaOneDrivers.sortInReverseOrder()
-                }
+                }.foregroundColor(.black)
                 
+                /// Gives spacing after the Sort Z-A button
                 Spacer()
             }
             

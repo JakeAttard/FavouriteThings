@@ -29,11 +29,11 @@ struct DetailView: View {
                     /// Displaying the Formula One Driver Image in the View
                     self.model.updateImage()
                         .resizable()
-                        .frame(width: 300.0, height: 300.0)
+                        .frame(width: 200.0, height: 200.0)
                         .clipShape(Circle())
                         .shadow(radius: 10)
                         .scaledToFit()
-                        .padding(.bottom, 20.0)
+                        .padding(.bottom, 30.0)
                     
                     /// TextField for the name of the driver
                     TextField(FormulaOneDriver.nameLabelPlaceholderText, text: $model.nameString)
