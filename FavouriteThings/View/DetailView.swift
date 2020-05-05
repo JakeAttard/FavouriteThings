@@ -41,6 +41,10 @@ struct DetailView: View {
                         .font(Font.system(size: 40, weight: .bold, design: .serif))
                         .padding(.bottom, 20.0)
                     
+                    NavigationLink( destination: LocationView()) {
+                        Text("Driver Location")
+                    }
+                    
                     HStack {
                         VStack {
                             
