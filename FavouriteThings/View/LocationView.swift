@@ -29,6 +29,10 @@ struct LocationView: View {
                 Text("Long")
                 TextField("Enter Longitude", text: $place.longitude)
             }
+            
+            Button("Update Location Name") {
+                self.place.updateNameFromCoordinates()
+            }
         }
     }
 }

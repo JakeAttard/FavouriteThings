@@ -12,7 +12,7 @@ import CoreLocation
 class Place: Identifiable, ObservableObject {
     @Published var coordinates = CLLocationCoordinate2D(latitude: -27.962, longitude: 153.382)
     
-    var name = ""
+    @Published var name = ""
     
     var latitude: String {
         get { "\(coordinates.latitude)" }
@@ -47,6 +47,25 @@ class Place: Identifiable, ObservableObject {
             }
             
             self.coordinates = location.coordinate
+        }
+    }
+    
+    func updateNameFromCoordinates() {
+        let geocoder = CLGeocoder()
+        let location = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        geocoder.reverseGeocodeLocation(location) { (maybePlaceMarks, maybeError) in
+            guard let placemark = maybePlaceMarks?.first else {
+                let description: String
+                if let error = maybeError {
+                    description = "\(error)"
+                } else {
+                    description = "<Unkown Error>"
+                }
+                
+                print("Got an error: \(description)")
+                return
+            }
+            self.name = placemark.name ?? placemark.administrativeArea ?? placemark.locality ?? placemark.subLocality ?? placemark.thoroughfare ?? placemark.subThoroughfare ?? placemark.country ?? "<Unkown Location Name>"
         }
     }
 }
