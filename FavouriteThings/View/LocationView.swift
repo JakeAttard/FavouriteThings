@@ -9,8 +9,27 @@
 import SwiftUI
 
 struct LocationView: View {
+    @ObservedObject var place = Place()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text("Name:")
+                TextField("Enter Name", text: $place.name, onCommit: {
+                    self.place.updateCoordinatesFromName()
+                })
+            }
+            
+            HStack {
+                Text("Lat:")
+                TextField("Enter Latitude", text: $place.latitude)
+            }
+            
+            HStack {
+                Text("Long")
+                TextField("Enter Longitude", text: $place.longitude)
+            }
+        }
     }
 }
 

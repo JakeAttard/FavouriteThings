@@ -39,11 +39,15 @@ struct DetailView: View {
                     TextField(FormulaOneDriver.nameLabelPlaceholderText, text: $model.nameString)
                         .multilineTextAlignment(TextAlignment.center)
                         .font(Font.system(size: 40, weight: .bold, design: .serif))
-                        .padding(.bottom, 20.0)
+                        .padding(.bottom, 10.0)
                     
                     NavigationLink( destination: LocationView()) {
-                        Text("Driver Location")
+                        Text("🌏")
+                        Text("Location")
                     }
+                    .padding(.bottom, 20.0)
+                    .font(Font.system(size: 20, weight: .bold, design: .serif))
+                    .foregroundColor(.black)
                     
                     HStack {
                         VStack {
