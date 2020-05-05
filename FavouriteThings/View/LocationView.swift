@@ -13,6 +13,7 @@ struct LocationView: View {
     
     var body: some View {
         VStack {
+            MapView(viewModel: place)
             HStack {
                 Text("Name:")
                 TextField("Enter Name", text: $place.name, onCommit: {
@@ -33,6 +34,8 @@ struct LocationView: View {
             Button("Update Location Name") {
                 self.place.updateNameFromCoordinates()
             }
+            
+            Spacer()
         }
     }
 }
