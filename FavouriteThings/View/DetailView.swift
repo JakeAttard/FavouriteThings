@@ -20,75 +20,76 @@ struct DetailView: View {
     /// Calling the FormulaOneDriver in a new variable called model
     @ObservedObject var model: FormulaOneDriver
     
+    @State var keyboardYOffset: CGFloat = 0
+    
     var body: some View {
-        
-        VStack {
-            Group {
-                
-                /// Displaying the Formula One Driver Image in the View
-                self.model.updateImage()
-                    .resizable()
-                    .frame(width: 300.0, height: 300.0)
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                    .scaledToFit()
-                    .padding(.bottom, 20.0)
-                
-                /// TextField for the name of the driver
-                TextField(FormulaOneDriver.nameLabelPlaceholderText, text: $model.nameString)
-                    .multilineTextAlignment(TextAlignment.center)
-                    .font(Font.system(size: 40, weight: .bold, design: .serif))
-                    .padding(.bottom, 20.0)
-                
-                HStack {
-                    VStack {
-                        
-                        /// TextField for the Image Label
-                        TextField(FormulaOneDriver.imageLabelPlaceholderText, text: $model.labelImage)
-                            .font(Font.system(size: 15, weight: .medium, design: .serif))
-                        
-                        /// TextField for the Team Name Label
-                        TextField(FormulaOneDriver.teamNameLabelPlaceholderText, text: $model.labelTeam)
-                            .font(Font.system(size: 15, weight: .medium, design: .serif))
-                        
-                        /// TextField for the Nation Label
-                        TextField(FormulaOneDriver.nationLabelPlaceholderText, text: $model.labelNation)
-                        .font(Font.system(size: 15, weight: .medium, design: .serif))
-                        
-                        /// TextField for the Sponsor Label
-                        TextField(FormulaOneDriver.sponsorLabelPlaceholderText, text: $model.labelSponsor)
-                        .font(Font.system(size: 15, weight: .medium, design: .serif))
-                        
-                        /// TextField for the Notes Label
-                        TextField(FormulaOneDriver.notesLabelPlaceholderText, text: $model.labelNotes)
-                        .font(Font.system(size: 15, weight: .medium, design: .serif))
-
-                    }.padding(.leading)
+            VStack {
+                Group {
                     
-                    VStack {
-                        /// TextField for the Formula One Driver Image URL
-                        TextField(FormulaOneDriver.imagePlaceholderText, text: $model.imageURLString)
-                        .font(Font.system(size: 16, weight: .bold, design: .serif))
+                    /// Displaying the Formula One Driver Image in the View
+                    self.model.updateImage()
+                        .resizable()
+                        .frame(width: 300.0, height: 300.0)
+                        .clipShape(Circle())
+                        .shadow(radius: 10)
+                        .scaledToFit()
+                        .padding(.bottom, 20.0)
+                    
+                    /// TextField for the name of the driver
+                    TextField(FormulaOneDriver.nameLabelPlaceholderText, text: $model.nameString)
+                        .multilineTextAlignment(TextAlignment.center)
+                        .font(Font.system(size: 40, weight: .bold, design: .serif))
+                        .padding(.bottom, 20.0)
+                    
+                    HStack {
+                        VStack {
+                            
+                            /// TextField for the Image Label
+                            TextField(FormulaOneDriver.imageLabelPlaceholderText, text: $model.labelImage)
+                                .font(Font.system(size: 15, weight: .medium, design: .serif))
+                            
+                            /// TextField for the Team Name Label
+                            TextField(FormulaOneDriver.teamNameLabelPlaceholderText, text: $model.labelTeam)
+                                .font(Font.system(size: 15, weight: .medium, design: .serif))
+                            
+                            /// TextField for the Nation Label
+                            TextField(FormulaOneDriver.nationLabelPlaceholderText, text: $model.labelNation)
+                            .font(Font.system(size: 15, weight: .medium, design: .serif))
+                            
+                            /// TextField for the Sponsor Label
+                            TextField(FormulaOneDriver.sponsorLabelPlaceholderText, text: $model.labelSponsor)
+                            .font(Font.system(size: 15, weight: .medium, design: .serif))
+                            
+                            /// TextField for the Notes Label
+                            TextField(FormulaOneDriver.notesLabelPlaceholderText, text: $model.labelNotes)
+                            .font(Font.system(size: 15, weight: .medium, design: .serif))
+
+                        }.padding(.leading)
                         
-                        /// TextField for the Formula One Driver Team Name
-                        TextField(FormulaOneDriver.teamNamePlaceholderText, text: $model.teamString)
+                        VStack {
+                            /// TextField for the Formula One Driver Image URL
+                            TextField(FormulaOneDriver.imagePlaceholderText, text: $model.imageURLString)
                             .font(Font.system(size: 16, weight: .bold, design: .serif))
-                        
-                        /// TextField for the Formula One Driver Nation
-                        TextField(FormulaOneDriver.nationPlaceholderText, text: $model.nationString)
-                        .font(Font.system(size: 16, weight: .bold, design: .serif))
-                        
-                        /// TextField for the Formula One Driver Sponsor
-                        TextField(FormulaOneDriver.sponsorPlaceholderText, text: $model.sponsorString)
-                        .font(Font.system(size: 16, weight: .bold, design: .serif))
-                        
-                        /// TextField for the Formula One Driver Notes
-                        TextField(FormulaOneDriver.notesPlaceholderText, text: $model.notesString)
-                        .font(Font.system(size: 16, weight: .bold, design: .serif))
-                    }.padding(.leading)
-                }
+                            
+                            /// TextField for the Formula One Driver Team Name
+                            TextField(FormulaOneDriver.teamNamePlaceholderText, text: $model.teamString)
+                                .font(Font.system(size: 16, weight: .bold, design: .serif))
+                            
+                            /// TextField for the Formula One Driver Nation
+                            TextField(FormulaOneDriver.nationPlaceholderText, text: $model.nationString)
+                            .font(Font.system(size: 16, weight: .bold, design: .serif))
+                            
+                            /// TextField for the Formula One Driver Sponsor
+                            TextField(FormulaOneDriver.sponsorPlaceholderText, text: $model.sponsorString)
+                            .font(Font.system(size: 16, weight: .bold, design: .serif))
+                            
+                            /// TextField for the Formula One Driver Notes
+                            TextField(FormulaOneDriver.notesPlaceholderText, text: $model.notesString)
+                            .font(Font.system(size: 16, weight: .bold, design: .serif))
+                        }.padding(.leading)
+                    }
                 }.padding(.horizontal).fixedSize(horizontal: false, vertical: true)
-        }
+            }.onKeyboard($keyboardYOffset)
     }
 }
 
