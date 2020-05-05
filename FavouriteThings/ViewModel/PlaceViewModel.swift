@@ -8,11 +8,14 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
-class Place: Identifiable, ObservableObject {
-    @Published var coordinates = CLLocationCoordinate2D(latitude: -27.962, longitude: 153.382)
+@objc class Place: NSObject, Identifiable, ObservableObject {
     
+    @Published var coordinates = CLLocationCoordinate2D(latitude: -27.962, longitude: 153.382)
     @Published var name = ""
+    
+    var isUpdating = false
     
     var latitude: String {
         get { "\(coordinates.latitude)" }
@@ -66,6 +69,21 @@ class Place: Identifiable, ObservableObject {
                 return
             }
             self.name = placemark.name ?? placemark.administrativeArea ?? placemark.locality ?? placemark.subLocality ?? placemark.thoroughfare ?? placemark.subThoroughfare ?? placemark.country ?? "<Unkown Location Name>"
+        }
+    }
+}
+
+extension Place: MKMapViewDelegate {
+    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+        guard !isUpdating else {
+            return
+        }
+        
+        isUpdating = true
+        let centre = mapView.centerCoordinate
+        coordinates = centre
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(250)) {
+            self.isUpdating = false
         }
     }
 }
