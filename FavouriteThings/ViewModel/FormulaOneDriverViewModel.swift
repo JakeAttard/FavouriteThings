@@ -136,3 +136,9 @@ extension FormulaOneDriver {
         return Image(uiImage: uiImage)
     }
 }
+
+extension FormulaOneDriver: Comparable {
+    public static func < (lhs: FormulaOneDriver, rhs: FormulaOneDriver) -> Bool {
+        lhs.nameString < rhs.nameString
+    }
+}

@@ -35,6 +35,21 @@ struct MasterView: View {
                     TextField(FormulaOneDriver.listTitlePlaceholderText, text: self.$formulaOneDrivers.title ).font(Font.system(.largeTitle).bold())
                 }
             }
+            HStack {
+                Spacer()
+                Button("Sort A-Z") {
+                    self.formulaOneDrivers.sortAlphabetically()
+                }
+                
+                Spacer()
+                
+                Button("Sort Z-A") {
+                    self.formulaOneDrivers.sortInReverseOrder()
+                }
+                
+                Spacer()
+            }
+            
             /// List
             List {
                 ForEach(formulaOneDrivers.entries, id: \.self) { formulaOneDriver in
