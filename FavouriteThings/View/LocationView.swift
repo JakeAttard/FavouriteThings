@@ -32,7 +32,7 @@ struct LocationView: View {
             }
             
             Button("Update Location Name") {
-                self.place.updateNameFromCoordinates()
+                self.place.updateCoordinatesFromName()
             }
             
             Spacer()

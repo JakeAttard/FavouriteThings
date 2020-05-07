@@ -12,10 +12,10 @@ import MapKit
 
 @objc class Place: NSObject, Identifiable, ObservableObject {
     
-    @Published var coordinates = CLLocationCoordinate2D(latitude: -27.962, longitude: 153.382)
+    @Published var coordinates = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     @Published var name = ""
     
-    var isUpdating = false
+    var mapCoordinates = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     
     var latitude: String {
         get { "\(coordinates.latitude)" }
@@ -31,6 +31,10 @@ import MapKit
             guard let coord = CLLocationDegrees(newValue) else { return }
             coordinates.longitude = coord
         }
+    }
+    
+    func updateMapCoordinates() {
+        mapCoordinates = coordinates
     }
     
     func updateCoordinatesFromName() {
@@ -54,6 +58,7 @@ import MapKit
     }
     
     func updateNameFromCoordinates() {
+        self.updateMapCoordinates()
         let geocoder = CLGeocoder()
         let location = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
         geocoder.reverseGeocodeLocation(location) { (maybePlaceMarks, maybeError) in
@@ -75,15 +80,8 @@ import MapKit
 
 extension Place: MKMapViewDelegate {
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-        guard !isUpdating else {
-            return
-        }
-        
-        isUpdating = true
         let centre = mapView.centerCoordinate
         coordinates = centre
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(250)) {
-            self.isUpdating = false
-        }
+        updateMapCoordinates()
     }
 }
