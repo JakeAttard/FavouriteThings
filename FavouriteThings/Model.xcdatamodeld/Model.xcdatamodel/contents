@@ -4,6 +4,9 @@
         <attribute name="imageLabel" attributeType="String" defaultValueString="Image:"/>
         <attribute name="imageName" attributeType="String" defaultValueString=""/>
         <attribute name="imageURL" attributeType="String" defaultValueString="https://i1.rgstatic.net/ii/profile.image/556096693125120-1509595191844_Q512/Dimitri_Joukoff.jpg"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="locationName" attributeType="String" defaultValueString=""/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="Dimitri Joukoff"/>
         <attribute name="nation" attributeType="String" defaultValueString=""/>
         <attribute name="nationLabel" attributeType="String" defaultValueString="Nation:"/>
@@ -20,7 +23,7 @@
         <relationship name="formulaOneDrivers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="FormulaOneDriver" inverseName="formulaOneDriver" inverseEntity="FormulaOneDriver"/>
     </entity>
     <elements>
-        <element name="FormulaOneDriver" positionX="15.47265625" positionY="14.51171875" width="128" height="238"/>
+        <element name="FormulaOneDriver" positionX="15.47265625" positionY="14.51171875" width="128" height="283"/>
         <element name="FormulaOneDrivers" positionX="-266.48046875" positionY="15.015625" width="128" height="73"/>
     </elements>
 </model>

@@ -15,7 +15,6 @@
 		B01285FE2461AB1E004FB1DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FD2461AB1E004FB1DE /* CoreLocation.framework */; };
 		B01286002461B155004FB1DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FF2461B155004FB1DE /* MapKit.framework */; };
 		B01286022461B47C004FB1DE /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01286012461B47C004FB1DE /* LocationView.swift */; };
-		B0349C972461C92200FB8CE1 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0349C962461C92200FB8CE1 /* PlaceViewModel.swift */; };
 		B0349C992461D46400FB8CE1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0349C982461D46400FB8CE1 /* MapView.swift */; };
 		B0C3EFFE2449E4230023B4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFD2449E4230023B4E2 /* AppDelegate.swift */; };
 		B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFF2449E4230023B4E2 /* SceneDelegate.swift */; };
@@ -56,7 +55,6 @@
 		B01285FD2461AB1E004FB1DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B01285FF2461B155004FB1DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B01286012461B47C004FB1DE /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		B0349C962461C92200FB8CE1 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		B0349C982461D46400FB8CE1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B045A5EE24586F6700A8F7BD /* FormulaOneDriver+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDriver+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B045A5EF24586F6700A8F7BD /* FormulaOneDriver+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDriver+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			children = (
 				B011FC7224583E69004B2CA9 /* FormulaOneDriversViewModel.swift */,
 				B011FC7424585965004B2CA9 /* FormulaOneDriverViewModel.swift */,
-				B0349C962461C92200FB8CE1 /* PlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -357,7 +354,6 @@
 				B011FC7524585965004B2CA9 /* FormulaOneDriverViewModel.swift in Sources */,
 				B011FC6624582C58004B2CA9 /* Model.xcdatamodeld in Sources */,
 				B01286022461B47C004FB1DE /* LocationView.swift in Sources */,
-				B0349C972461C92200FB8CE1 /* PlaceViewModel.swift in Sources */,
 				B01285FB2461A3FE004FB1DE /* KeyboardModifier.swift in Sources */,
 				B011FC7324583E69004B2CA9 /* FormulaOneDriversViewModel.swift in Sources */,
 				B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */,

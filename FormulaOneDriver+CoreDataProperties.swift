@@ -54,6 +54,12 @@ extension FormulaOneDriver {
     /// notesLabel variable for the entity which is a String
     @NSManaged public var notesLabel: String?
     
+    @NSManaged public var locationName: String?
+    
+    @NSManaged public var latitude: Double?
+    
+    @NSManaged public var longitude: Double?
+    
     /// variable driver which references the FormulaOneDrivers array
     @NSManaged public var driver: FormulaOneDrivers?
 

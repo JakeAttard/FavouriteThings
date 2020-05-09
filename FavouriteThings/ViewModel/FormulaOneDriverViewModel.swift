@@ -8,6 +8,8 @@
 
 import CoreData
 import SwiftUI
+import CoreLocation
+import MapKit
 
 /// Entension of FormulaOneDriver
 extension FormulaOneDriver {
@@ -135,10 +137,81 @@ extension FormulaOneDriver {
             }
         return Image(uiImage: uiImage)
     }
+    
+    var formulaOneDriverLocationName: String {
+        set { locationName = newValue }
+        get { locationName ?? "" }
+    }
+    
+    var formulaOneDriverLatitude: String {
+        set { latitude = Double(newValue) ?? 0.0 }
+        get { "\(latitude)" }
+    }
+    
+    var formulaOneDriverLongitude: String {
+        set { longitude = Double(newValue) ?? 0.0 }
+        get { "\(longitude)" }
+    }
+    
+    func getMapCoords() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    func setMapCoords(newCoords: CLLocationCoordinate2D) {
+        formulaOneDriverLongitude = "\(newCoords.longitude)"
+        formulaOneDriverLatitude = "\(newCoords.latitude)"
+    }
+    
+    func updateCoordinatesFromName() {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(formulaOneDriverLocationName) { (maybePlaceMarks, maybeError) in
+            guard let placemark = maybePlaceMarks?.first,
+            let location = placemark.location else {
+                let description: String
+                if let error = maybeError {
+                    description = "\(error)"
+                } else {
+                    description = "<Unkown Error>"
+                }
+                
+                print("Got an error: \(description)")
+                return
+            }
+            
+            self.setMapCoords(newCoords: location.coordinate)
+        }
+    }
+    
+    func updateNameFromCoordinates() {
+        let geocoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        geocoder.reverseGeocodeLocation(location) { (maybePlaceMarks, maybeError) in
+            guard let placemark = maybePlaceMarks?.first else {
+                let description: String
+                if let error = maybeError {
+                    description = "\(error)"
+                } else {
+                    description = "<Unkown Error>"
+                }
+                
+                print("Got an error: \(description)")
+                return
+            }
+            self.formulaOneDriverLocationName = placemark.name ?? placemark.administrativeArea ?? placemark.locality ?? placemark.subLocality ?? placemark.thoroughfare ?? placemark.subThoroughfare ?? placemark.country ?? "<Unkown Location Name>"
+        }
+    }
+    
 }
 
 extension FormulaOneDriver: Comparable {
     public static func < (lhs: FormulaOneDriver, rhs: FormulaOneDriver) -> Bool {
         lhs.nameString < rhs.nameString
+    }
+}
+
+extension FormulaOneDriver: MKMapViewDelegate {
+    public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let centre = mapView.centerCoordinate
+        setMapCoords(newCoords: centre)
     }
 }

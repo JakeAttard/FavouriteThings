@@ -9,39 +9,35 @@
 import SwiftUI
 
 struct LocationView: View {
-    @ObservedObject var place = Place()
+    @ObservedObject var model = FormulaOneDriver()
     
     var body: some View {
         VStack {
-            MapView(viewModel: place)
+            MapView(model: model)
             HStack {
                 Text("Name:")
-                TextField("Enter Name", text: $place.name, onCommit: {
-                    self.place.updateCoordinatesFromName()
-                })
+                TextField("Enter Name", text: $model.formulaOneDriverLocationName)
             }
             
             HStack {
                 Text("Lat:")
-                TextField("Enter Latitude", text: $place.latitude)
+                TextField("Enter Latitude", text: $model.formulaOneDriverLatitude, onCommit: {
+                    self.model.updateNameFromCoordinates()
+                })
             }
             
             HStack {
-                Text("Long")
-                TextField("Enter Longitude", text: $place.longitude)
+                Text("Long:")
+                TextField("Enter Longitude", text: $model.formulaOneDriverLongitude, onCommit: {
+                    self.model.updateNameFromCoordinates()
+                })
             }
             
             Button("Update Location Name") {
-                self.place.updateCoordinatesFromName()
+                self.model.updateCoordinatesFromName()
             }
             
             Spacer()
         }
-    }
-}
-
-struct LocationView_Previews: PreviewProvider {
-    static var previews: some View {
-        LocationView()
     }
 }
