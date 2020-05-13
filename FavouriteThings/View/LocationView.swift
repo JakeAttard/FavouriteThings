@@ -11,25 +11,27 @@ import SwiftUI
 struct LocationView: View {
     @ObservedObject var model: FormulaOneDriverMapViewDelegate
     
+    @State var keyboardYOffset: CGFloat = 0
+    
     var body: some View {
         VStack {
             
             MapView(model: model).scaledToFit()
             
             HStack {
-                Text("Name:")
+                Text("Location Name:")
                 TextField("Enter Name", text: model.$formulaOneDriver.formulaOneDriverLocationName)
             }
             
             HStack {
-                Text("Lat:")
+                Text("Latitude:")
                 TextField("Enter Latitude", text: $model.latitudeTextCoord, onCommit: {
                     self.model.updateNameFromCoordinates()
                 })
             }
             
             HStack {
-                Text("Long:")
+                Text("Longitude:")
                 TextField("Enter Longitude", text: $model.longitudeTextCoord, onCommit: {
                     self.model.updateNameFromCoordinates()
                 })
@@ -40,6 +42,7 @@ struct LocationView: View {
             }
             
             Spacer()
-        }
+        }.onKeyboard($keyboardYOffset)
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
