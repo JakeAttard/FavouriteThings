@@ -10,7 +10,7 @@ import MapKit
 import SwiftUI
 
 struct MapView: UIViewRepresentable {
-    @ObservedObject var model: FormulaOneDriver
+    @ObservedObject var model: FormulaOneDriverMapViewDelegate
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)

@@ -27,6 +27,7 @@
 		B0C3F0342449E8CA0023B4E2 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3F0332449E8CA0023B4E2 /* MasterView.swift */; };
 		B0C3F0362449E8E30023B4E2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3F0352449E8E30023B4E2 /* DetailView.swift */; };
 		B0C3F0382449E8EC0023B4E2 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3F0372449E8EC0023B4E2 /* RowView.swift */; };
+		B0FE4694246B6800009EE52F /* FormulaOneDriverMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE4693246B6800009EE52F /* FormulaOneDriverMapViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B0C3F0332449E8CA0023B4E2 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		B0C3F0352449E8E30023B4E2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B0C3F0372449E8EC0023B4E2 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		B0FE4693246B6800009EE52F /* FormulaOneDriverMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneDriverMapViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				B011FC7224583E69004B2CA9 /* FormulaOneDriversViewModel.swift */,
 				B011FC7424585965004B2CA9 /* FormulaOneDriverViewModel.swift */,
+				B0FE4693246B6800009EE52F /* FormulaOneDriverMapViewDelegate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				B011FC6624582C58004B2CA9 /* Model.xcdatamodeld in Sources */,
 				B01286022461B47C004FB1DE /* LocationView.swift in Sources */,
 				B01285FB2461A3FE004FB1DE /* KeyboardModifier.swift in Sources */,
+				B0FE4694246B6800009EE52F /* FormulaOneDriverMapViewDelegate.swift in Sources */,
 				B011FC7324583E69004B2CA9 /* FormulaOneDriversViewModel.swift in Sources */,
 				B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */,
 				B0C3F0022449E4230023B4E2 /* ContentView.swift in Sources */,

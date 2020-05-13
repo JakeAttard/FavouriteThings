@@ -41,7 +41,7 @@ struct DetailView: View {
                         .font(Font.system(size: 40, weight: .bold, design: .serif))
                         .padding(.bottom, 10.0)
                     
-                    NavigationLink( destination: LocationView(model: self.model)) {
+                    NavigationLink( destination: LocationView(model: FormulaOneDriverMapViewDelegate(formulaOneDriver: self.model))) {
                         Text("🌏")
                         Text("Location: \(self.model.formulaOneDriverLocationName)")
                     }
