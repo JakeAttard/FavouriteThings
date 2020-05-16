@@ -29,12 +29,7 @@ struct ContentView: View {
                     trailing: Button(
                         action: {
                             withAnimation {
-                                /// Adding a new FormulaOneDriver
-                                let formulaOneDriver = FormulaOneDriver(context: self.context)
-                                formulaOneDriver.formulaOneDriver = self.formulaOneDrivers.first
-                                
-                                /// Saving the new FormulaOneDriver
-                                try? self.context.save()
+                                self.formulaOneDrivers.first?.addNewFormulaOneDriver(context: self.context)
                             }
                         }
                         

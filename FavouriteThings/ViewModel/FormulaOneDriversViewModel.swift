@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import Foundation
+import SwiftUI
 
 /// Entension of FormulaOneDrivers
 extension FormulaOneDrivers {
@@ -30,5 +30,24 @@ extension FormulaOneDrivers {
     
     func sortInReverseOrder() {
         entries.sort(by: (>))
+    }
+    
+    func addNewFormulaOneDriver(context: NSManagedObjectContext) {
+        
+        /// Adding a new FormulaOneDriver
+        let formulaOneDriver = FormulaOneDriver(context: context)
+        
+        /// Setting the new FormulaOneDriver
+        formulaOneDriver.formulaOneDriver = self
+        
+        self.saveFormulaOneDriver()
+    }
+    
+    func saveFormulaOneDriver() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("No App Delegate")
+        }
+        
+        appDelegate.saveContext()
     }
 }
