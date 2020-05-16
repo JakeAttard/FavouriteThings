@@ -28,7 +28,11 @@ struct ContentView: View {
                     leading: EditButton(),
                     trailing: Button(
                         action: {
+                            
+                            /// Adding a new FormulaOneDriver item to the list
                             withAnimation {
+                                
+                                /// Adding the formulaOneDriver
                                 self.formulaOneDrivers.first?.addNewFormulaOneDriver(context: self.context)
                             }
                         }
