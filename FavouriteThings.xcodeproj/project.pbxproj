@@ -11,7 +11,7 @@
 		B011FC71245831C2004B2CA9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B011FC70245831C1004B2CA9 /* CoreData.framework */; };
 		B011FC7324583E69004B2CA9 /* FormulaOneDriversViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011FC7224583E69004B2CA9 /* FormulaOneDriversViewModel.swift */; };
 		B011FC7524585965004B2CA9 /* FormulaOneDriverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011FC7424585965004B2CA9 /* FormulaOneDriverViewModel.swift */; };
-		B01285FB2461A3FE004FB1DE /* KeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01285FA2461A3FE004FB1DE /* KeyboardModifier.swift */; };
+		B01285FB2461A3FE004FB1DE /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01285FA2461A3FE004FB1DE /* Keyboard.swift */; };
 		B01285FE2461AB1E004FB1DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FD2461AB1E004FB1DE /* CoreLocation.framework */; };
 		B01286002461B155004FB1DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FF2461B155004FB1DE /* MapKit.framework */; };
 		B01286022461B47C004FB1DE /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01286012461B47C004FB1DE /* LocationView.swift */; };
@@ -52,7 +52,7 @@
 		B011FC70245831C1004B2CA9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B011FC7224583E69004B2CA9 /* FormulaOneDriversViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneDriversViewModel.swift; sourceTree = "<group>"; };
 		B011FC7424585965004B2CA9 /* FormulaOneDriverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneDriverViewModel.swift; sourceTree = "<group>"; };
-		B01285FA2461A3FE004FB1DE /* KeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModifier.swift; sourceTree = "<group>"; };
+		B01285FA2461A3FE004FB1DE /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		B01285FD2461AB1E004FB1DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B01285FF2461B155004FB1DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B01286012461B47C004FB1DE /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		B01285FC2461A405004FB1DE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B01285FA2461A3FE004FB1DE /* KeyboardModifier.swift */,
+				B01285FA2461A3FE004FB1DE /* Keyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,7 +357,7 @@
 				B011FC7524585965004B2CA9 /* FormulaOneDriverViewModel.swift in Sources */,
 				B011FC6624582C58004B2CA9 /* Model.xcdatamodeld in Sources */,
 				B01286022461B47C004FB1DE /* LocationView.swift in Sources */,
-				B01285FB2461A3FE004FB1DE /* KeyboardModifier.swift in Sources */,
+				B01285FB2461A3FE004FB1DE /* Keyboard.swift in Sources */,
 				B0FE4694246B6800009EE52F /* FormulaOneDriverMapViewDelegate.swift in Sources */,
 				B011FC7324583E69004B2CA9 /* FormulaOneDriversViewModel.swift in Sources */,
 				B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */,

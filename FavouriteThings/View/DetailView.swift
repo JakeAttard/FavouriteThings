@@ -20,11 +20,10 @@ struct DetailView: View {
     /// Calling the FormulaOneDriver in a new variable called model
     @ObservedObject var model: FormulaOneDriver
     
-    @State var keyboardYOffset: CGFloat = 0
-    
     var body: some View {
             VStack {
-                Group {
+                ScrollView {
+                    Group {
                     
                     /// Displaying the Formula One Driver Image in the View
                     self.model.updateImage()
@@ -72,7 +71,7 @@ struct DetailView: View {
                             TextField(FormulaOneDriver.notesLabelPlaceholderText, text: $model.labelNotes)
                             .font(Font.system(size: 15, weight: .medium, design: .serif))
 
-                        }.padding(.leading)
+                        }
                         
                         VStack {
                             /// TextField for the Formula One Driver Image URL
@@ -94,10 +93,10 @@ struct DetailView: View {
                             /// TextField for the Formula One Driver Notes
                             TextField(FormulaOneDriver.notesPlaceholderText, text: $model.notesString)
                             .font(Font.system(size: 16, weight: .bold, design: .serif))
-                        }.padding(.leading)
+                        }
                     }
                 }.padding(.horizontal).fixedSize(horizontal: false, vertical: true)
-            }.onKeyboard($keyboardYOffset)
+            }
+        }.modifier(Keyboard()).animation(.default)
     }
 }
-
