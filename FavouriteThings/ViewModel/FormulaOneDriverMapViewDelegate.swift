@@ -70,7 +70,11 @@ class FormulaOneDriverMapViewDelegate: NSObject, Identifiable, ObservableObject 
     }
     
     func updateNameFromCoordinates() {
+        
+        guard formulaOneDriver.formulaOneDriverLocationName == "" else { setMapCoords(latitude: latitudeTextCoord, longitude: longitudeTextCoord);return}
+        
         setMapCoords(latitude: latitudeTextCoord, longitude: longitudeTextCoord)
+        
         let geocoder = CLGeocoder()
         let location = CLLocation(latitude: formulaOneDriver.latitude, longitude: formulaOneDriver.longitude)
         geocoder.reverseGeocodeLocation(location) { (maybePlaceMarks, maybeError) in
