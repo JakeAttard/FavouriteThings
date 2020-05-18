@@ -29,6 +29,8 @@ struct LocationView: View {
                 HStack {
                     /// Text latitude
                     Text(FormulaOneDriver.latitudeText)
+                    
+                    /// TextField for the latitude
                     TextField(FormulaOneDriver.latitudeTextField, text: $model.latitudeTextCoord, onCommit: {
                         self.model.updateNameFromCoordinates()
                     })
@@ -37,11 +39,14 @@ struct LocationView: View {
                 HStack {
                     /// Text Longitude
                     Text(FormulaOneDriver.longitudeText)
+                    
+                    /// TextField for the longitude
                     TextField(FormulaOneDriver.longitudeTextField, text: $model.longitudeTextCoord, onCommit: {
                         self.model.updateNameFromCoordinates()
                     })
                 }
                 
+                /// Button updateLocationNameBtn
                 Button(FormulaOneDriver.updateLocationNameBtn) {
                     self.model.updateCoordinatesFromName()
                 }
