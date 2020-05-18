@@ -13,33 +13,44 @@ import MapKit
 
 class FormulaOneDriverMapViewDelegate: NSObject, Identifiable, ObservableObject {
     
+    /// variable formulaOneDriver calling the FormulaOneDriver class
     @ObservedObject var formulaOneDriver: FormulaOneDriver
     
+    /// Declaring new variable called latitudeTextCoord which is a string
     var latitudeTextCoord: String
+    
+    /// Declaring new variable called longitudeTextCoord which is a string
     var longitudeTextCoord: String
     
+    /// Initialising the FormulaOneDriver class, latitudeTextCorrd with the formulaOneDriverLatitude and longitudeTextCoord with the formulaOneDriverLongitude
     init(formulaOneDriver: FormulaOneDriver) {
         self.formulaOneDriver = formulaOneDriver
         self.latitudeTextCoord = formulaOneDriver.formulaOneDriverLatitude
         self.longitudeTextCoord = formulaOneDriver.formulaOneDriverLongitude
     }
     
+    /// getMapCoords function gets the coordinates from the model and puts it into the latitude and longitude variables
     func getMapCoords() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: formulaOneDriver.latitude, longitude: formulaOneDriver.longitude)
     }
     
+    /// setMapCoords function sets the longitude and latitude variable to the FormulaOneDriver object
     func setMapCoords(newCoords: CLLocationCoordinate2D) {
         formulaOneDriver.formulaOneDriverLongitude = "\(newCoords.longitude)"
         formulaOneDriver.formulaOneDriverLatitude = "\(newCoords.latitude)"
     }
     
+    /// setMapCoords function sets the longitude and latitude variable to the FormulaOneDriver object
     func setMapCoords(latitude: String, longitude: String) {
         formulaOneDriver.formulaOneDriverLatitude = latitude
         formulaOneDriver.formulaOneDriverLongitude = longitude
     }
     
+    /// updateCoordinatesFromName function updates the coordinates once locationName has been added to the TextField
     func updateCoordinatesFromName() {
+        /// Reverse and forward geocoding for the locationName and coordinates
         let geocoder = CLGeocoder()
+        /// The location latitude and longitude coordinates is returned from the locationName
         geocoder.geocodeAddressString(formulaOneDriver.formulaOneDriverLocationName) { (maybePlaceMarks, maybeError) in
             guard let placemark = maybePlaceMarks?.first,
             let location = placemark.location else {
