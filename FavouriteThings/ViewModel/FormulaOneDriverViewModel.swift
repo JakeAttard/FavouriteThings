@@ -57,74 +57,110 @@ extension FormulaOneDriver {
     /// variable nameString getting the name value from CoreData to the variable
     var nameString: String {
         get { name ?? "" }
-        set { name = newValue }
+        set {
+            name = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable imageString getting the imageName value from CoreData to the variable
     var imageString: String {
         get { imageName ?? "" }
-        set { imageName = newValue }
+        set {
+            imageName = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable imageURLString getting the imageURL value from CoreData to the variable
     var imageURLString: String {
         get { imageURL ?? "" }
-        set { imageURL = newValue }
+        set {
+            imageURL = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable teamString  getting the team value from CoreData to the variable
     var teamString: String {
         get { team ?? "" }
-        set { team = newValue }
+        set {
+            team = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable nationString  getting the nation value from CoreData to the variable
     var nationString: String {
         get { nation ?? "" }
-        set { nation = newValue }
+        set {
+            nation = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable sponsorString  getting the sponsor value from CoreData to the variable
     var sponsorString: String {
         get { sponsor ?? "" }
-        set { sponsor = newValue }
+        set {
+            sponsor = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable notesString  getting the notes value from CoreData to the variable
     var notesString: String {
         get { notes ?? "" }
-        set { notes = newValue }
+        set {
+            notes = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// Labels
     /// variable labelImage  getting the imageLabel value from CoreData to the variable
     var labelImage: String {
         get { imageLabel ?? "" }
-        set { imageLabel = newValue }
+        set {
+            imageLabel = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable labelTeam  getting the teamLabel value from CoreData to the variable
     var labelTeam: String {
         get { teamLabel ?? "" }
-        set { teamLabel = newValue }
+        set {
+            teamLabel = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable labelNation getting the nationLabel value from CoreData to the variable
     var labelNation: String {
         get { nationLabel ?? "" }
-        set { nationLabel = newValue }
+        set {
+            nationLabel = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable labelSponsor  getting the sponsorLabel value from CoreData to the variable
     var labelSponsor: String {
         get { sponsorLabel ?? "" }
-        set { sponsorLabel = newValue }
+        set {
+            sponsorLabel = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// variable labelNotes  getting the notesLabel value from CoreData to the variable
     var labelNotes: String {
         get { notesLabel ?? "" }
-        set { notesLabel = newValue }
+        set {
+            notesLabel = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
     }
     
     /// updateImage function and returning the Image
@@ -140,19 +176,29 @@ extension FormulaOneDriver {
     
     /// variable formulaOneDriverLocationName getting the locationName value from CoreData to the variable
     var formulaOneDriverLocationName: String {
-        set { locationName = newValue }
+        set {
+            locationName = newValue
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
         get { locationName ?? "" }
     }
     
     /// variable formulaOneDriverLatitude getting the latitude value from CoreData to the variable
     var formulaOneDriverLatitude: String {
-        set { latitude = Double(newValue) ?? 0.0 }
+        set {
+            latitude = Double(newValue) ?? 0.0
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
         get { "\(latitude)" }
     }
     
     /// variable formulaOneDriverLongitude getting the longitude value from CoreData to the variable
     var formulaOneDriverLongitude: String {
-        set { longitude = Double(newValue) ?? 0.0 }
+        set {
+            longitude = Double(newValue) ?? 0.0
+            formulaOneDriver?.saveFormulaOneDriver()
+        }
+        
         get { "\(longitude)" }
     }
     

@@ -69,14 +69,21 @@ class FormulaOneDriverMapViewDelegate: NSObject, Identifiable, ObservableObject 
         }
     }
     
+    
+    /// updateNameFromCoordinates updates the locationName once the coordinates have been entered
     func updateNameFromCoordinates() {
-        
+        /// Updates when the locationName textfield is empty else it just updates the map coordinates
         guard formulaOneDriver.formulaOneDriverLocationName == "" else { setMapCoords(latitude: latitudeTextCoord, longitude: longitudeTextCoord);return}
         
         setMapCoords(latitude: latitudeTextCoord, longitude: longitudeTextCoord)
         
+        /// Reverse and forward geocoding for the locationName and coordinates
         let geocoder = CLGeocoder()
+        
+        /// location variable is storing the locationName from coordinates
         let location = CLLocation(latitude: formulaOneDriver.latitude, longitude: formulaOneDriver.longitude)
+        
+        /// Returns the location based on the longitude and latitude
         geocoder.reverseGeocodeLocation(location) { (maybePlaceMarks, maybeError) in
             guard let placemark = maybePlaceMarks?.first else {
                 let description: String
