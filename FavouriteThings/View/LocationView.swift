@@ -13,29 +13,36 @@ struct LocationView: View {
     
     var body: some View {
         VStack {
+            /// Calling the MapView in the LocationView
             MapView(model: model)
+            
             ScrollView {
-                
                 HStack {
-                    Text("Location Name:")
-                    TextField("Enter Name", text: model.$formulaOneDriver.formulaOneDriverLocationName)
+                    
+                    /// Text locationName
+                    Text(FormulaOneDriver.locationNameText)
+                    
+                    /// TextField for the Location Label
+                    TextField(FormulaOneDriver.locationNameTextField, text: model.$formulaOneDriver.formulaOneDriverLocationName)
                 }
                 
                 HStack {
-                    Text("Latitude:")
-                    TextField("Enter Latitude", text: $model.latitudeTextCoord, onCommit: {
+                    /// Text latitude
+                    Text(FormulaOneDriver.latitudeText)
+                    TextField(FormulaOneDriver.latitudeTextField, text: $model.latitudeTextCoord, onCommit: {
                         self.model.updateNameFromCoordinates()
                     })
                 }
                 
                 HStack {
-                    Text("Longitude:")
-                    TextField("Enter Longitude", text: $model.longitudeTextCoord, onCommit: {
+                    /// Text Longitude
+                    Text(FormulaOneDriver.longitudeText)
+                    TextField(FormulaOneDriver.longitudeTextField, text: $model.longitudeTextCoord, onCommit: {
                         self.model.updateNameFromCoordinates()
                     })
                 }
                 
-                Button("Update Location Name") {
+                Button(FormulaOneDriver.updateLocationNameBtn) {
                     self.model.updateCoordinatesFromName()
                 }
                 

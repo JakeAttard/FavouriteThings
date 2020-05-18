@@ -54,6 +54,27 @@ extension FormulaOneDriver {
     /// List Title Placeholder Text
     static var listTitlePlaceholderText: String = "Formula One Drivers"
     
+    /// Location Name Text
+    static var locationNameText: String = "Location Name:"
+    
+    /// Location Name TextField
+    static var locationNameTextField: String = "Enter Location Name"
+    
+    /// Latitude Text
+    static var latitudeText: String = "Latitude:"
+    
+    /// Latitude TextField
+    static var latitudeTextField: String = "Enter latitude"
+    
+    /// Longitude Text
+    static var longitudeText: String = "Longitude:"
+    
+    /// Latitude TextField
+    static var longitudeTextField: String = "Enter longitude"
+    
+    /// Button Update Location Name
+    static var updateLocationNameBtn: String = "Update Location Name"
+    
     /// variable nameString getting the name value from CoreData to the variable
     var nameString: String {
         get { name ?? "" }
