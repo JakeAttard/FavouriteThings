@@ -65,6 +65,7 @@ class FormulaOneDriverMapViewDelegate: NSObject, Identifiable, ObservableObject 
                 return
             }
             
+            /// Getting the mapCoordinates
             self.setMapCoords(newCoords: location.coordinate)
         }
     }
@@ -96,14 +97,8 @@ class FormulaOneDriverMapViewDelegate: NSObject, Identifiable, ObservableObject 
                 print("Got an error: \(description)")
                 return
             }
+            /// Getting the locationName
             self.formulaOneDriver.formulaOneDriverLocationName = placemark.name ?? placemark.administrativeArea ?? placemark.locality ?? placemark.subLocality ?? placemark.thoroughfare ?? placemark.subThoroughfare ?? placemark.country ?? "<Unkown Location Name>"
         }
-    }
-}
-
-extension FormulaOneDriverMapViewDelegate: MKMapViewDelegate {
-    public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        let centre = mapView.centerCoordinate
-        setMapCoords(newCoords: centre)
     }
 }

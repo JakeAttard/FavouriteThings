@@ -15,6 +15,7 @@
 		B01285FE2461AB1E004FB1DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FD2461AB1E004FB1DE /* CoreLocation.framework */; };
 		B01286002461B155004FB1DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01285FF2461B155004FB1DE /* MapKit.framework */; };
 		B01286022461B47C004FB1DE /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01286012461B47C004FB1DE /* LocationView.swift */; };
+		B032029424728AF1002B578E /* FormulaOneDriverMapViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B032029324728AF1002B578E /* FormulaOneDriverMapViewDelegateExtension.swift */; };
 		B0349C992461D46400FB8CE1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0349C982461D46400FB8CE1 /* MapView.swift */; };
 		B0C3EFFE2449E4230023B4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFD2449E4230023B4E2 /* AppDelegate.swift */; };
 		B0C3F0002449E4230023B4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EFFF2449E4230023B4E2 /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		B01285FD2461AB1E004FB1DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B01285FF2461B155004FB1DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B01286012461B47C004FB1DE /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		B032029324728AF1002B578E /* FormulaOneDriverMapViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneDriverMapViewDelegateExtension.swift; sourceTree = "<group>"; };
 		B0349C982461D46400FB8CE1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B045A5EE24586F6700A8F7BD /* FormulaOneDriver+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDriver+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B045A5EF24586F6700A8F7BD /* FormulaOneDriver+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormulaOneDriver+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				B01285FA2461A3FE004FB1DE /* Keyboard.swift */,
+				B032029324728AF1002B578E /* FormulaOneDriverMapViewDelegateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				B0C3F0362449E8E30023B4E2 /* DetailView.swift in Sources */,
 				B0349C992461D46400FB8CE1 /* MapView.swift in Sources */,
 				B011FC7524585965004B2CA9 /* FormulaOneDriverViewModel.swift in Sources */,
+				B032029424728AF1002B578E /* FormulaOneDriverMapViewDelegateExtension.swift in Sources */,
 				B011FC6624582C58004B2CA9 /* Model.xcdatamodeld in Sources */,
 				B01286022461B47C004FB1DE /* LocationView.swift in Sources */,
 				B01285FB2461A3FE004FB1DE /* Keyboard.swift in Sources */,
