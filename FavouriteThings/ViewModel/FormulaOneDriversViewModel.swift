@@ -24,14 +24,17 @@ extension FormulaOneDrivers {
         get { listTitle ?? "" }
     }
     
+    /// Sorting the entries alphabetically (A-Z)
     func sortAlphabetically() {
         entries.sort()
     }
     
+    /// Sorting the entries in reverseOrder (Z-A)
     func sortInReverseOrder() {
         entries.sort(by: (>))
     }
     
+    /// Adding New formulaOneDriver
     func addNewFormulaOneDriver(context: NSManagedObjectContext) {
         
         /// Adding a new FormulaOneDriver
@@ -40,14 +43,18 @@ extension FormulaOneDrivers {
         /// Setting the new FormulaOneDriver
         formulaOneDriver.formulaOneDriver = self
         
+        /// Saving the new formulaOneDriver
         self.saveFormulaOneDriver()
     }
     
+    /// savingFormulaOneDriver function to use in the addNewFormulaOneDriver function
     func saveFormulaOneDriver() {
+        /// Calling the AppDelegate
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("No App Delegate")
         }
         
+        /// Saving the Context
         appDelegate.saveContext()
     }
 }

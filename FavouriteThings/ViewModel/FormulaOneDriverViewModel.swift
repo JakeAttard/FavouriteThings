@@ -138,16 +138,19 @@ extension FormulaOneDriver {
         return Image(uiImage: uiImage)
     }
     
+    /// variable formulaOneDriverLocationName getting the locationName value from CoreData to the variable
     var formulaOneDriverLocationName: String {
         set { locationName = newValue }
         get { locationName ?? "" }
     }
     
+    /// variable formulaOneDriverLatitude getting the latitude value from CoreData to the variable
     var formulaOneDriverLatitude: String {
         set { latitude = Double(newValue) ?? 0.0 }
         get { "\(latitude)" }
     }
     
+    /// variable formulaOneDriverLongitude getting the longitude value from CoreData to the variable
     var formulaOneDriverLongitude: String {
         set { longitude = Double(newValue) ?? 0.0 }
         get { "\(longitude)" }
@@ -155,7 +158,10 @@ extension FormulaOneDriver {
     
 }
 
+/// Extension of FormulaOneDriver
 extension FormulaOneDriver: Comparable {
+    
+    /// func used to sort out entries to display them (A-Z), (Z-A)
     public static func < (lhs: FormulaOneDriver, rhs: FormulaOneDriver) -> Bool {
         lhs.nameString < rhs.nameString
     }

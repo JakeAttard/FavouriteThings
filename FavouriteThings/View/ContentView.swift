@@ -40,6 +40,7 @@ struct ContentView: View {
                     ) {
                     Image(systemName: "plus")
                     })
-        }
+        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        .padding()
     }
 }
